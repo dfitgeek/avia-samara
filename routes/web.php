@@ -6,6 +6,7 @@ use App\Livewire\Home;
 use App\Livewire\MadeToMeasure;
 use App\Livewire\OurMission;
 use App\Livewire\OrderProcess;
+use App\Livewire\Shop;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 
@@ -13,6 +14,7 @@ Route::get('/', Home::class)->name('home');
 Route::get('/about', AboutUs::class)->name('about');
 Route::get('/made-to-measure', MadeToMeasure::class)->name('made-to-measure');
 Route::get('/contact', ContactUs::class)->name('contact');
+Route::get('/shop', Shop::class)->name('shop');
 
 
 Route::get('/mission', OurMission::class)->name('mission');

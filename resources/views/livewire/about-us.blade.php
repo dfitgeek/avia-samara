@@ -1,16 +1,18 @@
 <main>
-    <div class="relative w-full h-[400px] md:h-[500px] overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1598554247166-48f5685df58d?q=80&w=2000&auto=format&fit=crop"
-            alt="Made to Measure" class="w-full h-full object-cover object-top">
 
+    <div class="relative w-full h-[400px] md:h-[500px] overflow-hidden">
+        <img src="{{ asset('media/IMG_2581.jpg') }}"
+            alt="Made to Measure" class="w-full h-full object-cover object-top">
+        {{-- Float In From Bottom --}}
         <div class="absolute inset-0 flex flex-col justify-center items-center bg-black/30 px-4 text-center">
-            <p class="mb-4 text-white/90 text-xs md:text-sm uppercase tracking-[0.2em]">How It Works</p>
+            <p class="mb-4 text-white/90 text-xs md:text-sm uppercase tracking-[0.2em]">Who We Are</p>
             <h1 class="font-['Playfair_Display'] font-light text-white text-4xl md:text-6xl lg:text-7xl">
-                Made to Measure Bespoke
+                Avia Samara Fashion
             </h1>
         </div>
     </div>
 
+    {{-- Float in from left animation on scroll   --}}
     <div class="mx-auto px-6 py-20 md:py-32 max-w-[1400px]">
         <div class="items-center gap-16 grid grid-cols-1 lg:grid-cols-2">
 
@@ -19,7 +21,7 @@
                     class="top-[-20px] lg:right-[40px] left-[20px] md:left-[80px] lg:left-auto -z-10 absolute bg-[#F6EFE6] rounded-tr-[50px] w-[280px] md:w-[350px] h-[380px] md:h-[450px]">
                 </div>
 
-                <img src="https://images.unsplash.com/photo-1579895393084-2a1f11463e26?q=80&w=800&auto=format&fit=crop"
+                <img src="{{ asset('media/IMG_7522.jpg') }}"
                     alt="African Fabrics"
                     class="z-10 shadow-lg rounded-xl w-[280px] md:w-[350px] h-[380px] md:h-[450px] object-cover">
             </div>
@@ -29,7 +31,7 @@
                     Experience Tradition and Style
                 </h2>
                 <p class="font-light text-gray-500 text-sm md:text-base leading-relaxed">
-                    At AFYCHRY, we combine traditional African textiles with modern tailoring techniques to deliver the
+                    At Avia Samara, we combine traditional African textiles with modern tailoring techniques to deliver the
                     perfect fit for any occasion. Our custom-made suits, dresses, and alterations are crafted with care
                     and precision, ensuring customer satisfaction every time.
                 </p>
@@ -37,16 +39,17 @@
         </div>
     </div>
 
+    {{-- Float in from left animation on scroll --}}
     <div class="mx-auto px-6 pb-24 max-w-[1400px]">
         <h2 class="mb-16 font-['Playfair_Display'] font-bold text-black text-3xl md:text-5xl text-center">
             Expressions of African Fabrics
         </h2>
 
-        <div class="gap-x-6 gap-y-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+        <div class="gap-x-6 gap-y-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
             <div class="group cursor-pointer">
                 <div class="mb-4 rounded-lg h-[200px] md:h-[250px] overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1523820253456-42795328246f?q=80&w=600&auto=format&fit=crop"
+                    <img src="{{ asset('media/IMG_2193.jpg') }}"
                         alt="Rooted in Tradition"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
@@ -57,7 +60,7 @@
 
             <div class="group cursor-pointer">
                 <div class="mb-4 rounded-lg h-[200px] md:h-[250px] overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1598209279122-8541213a0383?q=80&w=600&auto=format&fit=crop"
+                    <img src="{{ asset('media/IMG_4210.jpg') }}"
                         alt="Tailored Elegance"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
@@ -69,9 +72,9 @@
             <div class="group cursor-pointer">
                 <div
                     class="flex justify-center items-center bg-white mb-4 p-6 border border-gray-100 rounded-lg h-[200px] md:h-[250px] overflow-hidden">
-                    <svg viewBox="0 0 100 100" class="fill-none stroke-2 stroke-black w-full h-full">
-                        <path
-                            d="M50,10 C60,10 70,15 75,25 C80,30 85,35 80,50 C75,65 60,85 50,90 C40,85 25,65 20,50 C15,35 20,25 25,20 C30,15 40,10 50,10 Z" />
+                    <img src="{{ asset('media/IMG_1164.jpg') }}"
+                        alt="Tailored Elegance"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </svg>
                 </div>
                 <h3 class="mb-2 font-bold text-xs uppercase tracking-wide">Symbolic Motifs</h3>
@@ -81,7 +84,7 @@
 
             <div class="group cursor-pointer">
                 <div class="mb-4 rounded-lg h-[200px] md:h-[250px] overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=600&auto=format&fit=crop"
+                    <img src="{{ asset('media/IMG_7518.jpg') }}"
                         alt="Cultural Fusion"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
@@ -92,7 +95,7 @@
 
             <div class="group cursor-pointer">
                 <div class="mb-4 rounded-lg h-[200px] md:h-[250px] overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1605289967086-415d6924d556?q=80&w=600&auto=format&fit=crop"
+                    <img src="{{ asset('media/DSC08238-y-(4)-Edit.jpg') }}"
                         alt="Crafted Diversity"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
@@ -103,18 +106,18 @@
 
             <div class="group cursor-pointer">
                 <div class="mb-4 rounded-lg h-[200px] md:h-[250px] overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1509319117193-518fa81490aa?q=80&w=600&auto=format&fit=crop"
+                    <img src="{{ asset('media/AVIA-SAMARA-c_055054.jpg') }}"
                         alt="Bespoke Creations"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
-                <h3 class="mb-2 font-bold text-xs uppercase tracking-wide">Bespoke Creations</h3>
+                <h3 class="mb-2 font-bold text-xs uppercase tracking-wide">Made For You</h3>
                 <p class="text-[10px] text-gray-500 leading-tight">Create a personal fashion statement with
                     custom-tailored African garments.</p>
             </div>
 
             <div class="group cursor-pointer">
                 <div class="mb-4 rounded-lg h-[200px] md:h-[250px] overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1616166330003-8e10464618a5?q=80&w=600&auto=format&fit=crop"
+                    <img src="{{ asset('media/IMG_2192.jpg') }}"
                         alt="Colorful Narratives"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
@@ -125,7 +128,7 @@
 
             <div class="group cursor-pointer">
                 <div class="mb-4 rounded-lg h-[200px] md:h-[250px] overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1620799140408-ed5341cd2431?q=80&w=600&auto=format&fit=crop"
+                    <img src="{{ asset('media/IMG_0122.jpg') }}"
                         alt="Sustainable Fashion"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
@@ -137,21 +140,25 @@
         </div>
     </div>
 
-    <div class="relative w-full h-[300px] md:h-[400px]">
-        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=2000&auto=format&fit=crop"
+    {{-- Float in from bottom animation on scroll --}}
+    <div class="relative flex justify-center items-center w-full h-[300px] md:h-[400px]">
+        <img src="{{ asset('media/photo-1531123897727-8f129e1688ce.avif') }}"
             alt="Book Consultation" class="w-full h-full object-[center_30%] object-cover">
 
         <div class="absolute inset-0 bg-[#A05A2C]/40 mix-blend-multiply"></div>
         <div class="absolute inset-0 bg-black/20"></div>
 
-        <div class="absolute inset-0 flex flex-col justify-center items-center text-center">
-            <h2 class="drop-shadow-md mb-8 font-['Inter'] font-bold text-white text-2xl md:text-3xl tracking-wide">
-                Book a Consultation
-            </h2>
-            <a href="#"
-                class="hover:bg-white px-8 py-3 border border-white/80 text-white/90 hover:text-[#A05A2C] text-xs uppercase tracking-widest transition-all duration-300">
-                Request To Book
-            </a>
+        <div class="absolute inset-0 flex justify-center items-center">
+            <div class="flex flex-col items-center bg-white/20 shadow-lg backdrop-blur-md mx-4 px-4 md:px-12 py-8 md:py-12 rounded-xl w-full max-w-2xl text-center">
+                <h2 class="drop-shadow-md mb-6 font-['Inter'] font-bold text-white text-lg md:text-3xl capitalize leading-snug md:leading-tight tracking-wide">
+                    Dress how you
+want to be addressed.
+                </h2>
+                <a href="{{ route('shop') }}" wire:navigate
+                    class="inline-block hover:bg-white shadow-md mt-2 md:mt-4 px-6 md:px-10 py-2 md:py-3 border border-white/80 rounded-full font-semibold text-white/90 hover:text-[#A05A2C] text-xs md:text-sm uppercase tracking-widest transition-all duration-300">
+                    Shop Now
+                </a>
+            </div>
         </div>
     </div>
 </main>

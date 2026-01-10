@@ -1,6 +1,6 @@
 <main>
     <div class="relative w-full h-[400px] md:h-[500px] overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1576191630132-75d315ce920c?q=80&w=2000&auto=format&fit=crop"
+        <img src="{{ asset('media/premium_photo-1670871853613-34b62cc3d551.avif') }}"
             alt="Avia Samara Hero" class="w-full h-full object-cover object-top">
         <div class="absolute inset-0 flex justify-center items-center bg-black/20">
             <h1
@@ -9,28 +9,19 @@
         </div>
     </div>
 
-    <div class="bg-[#F6EFE6] px-6 py-20 text-center">
-        <h2 class="font-['Playfair_Display'] text-[#2b2b2b] text-3xl md:text-5xl leading-tight">
-            DRESS HOW YOU <br>
-            WANT TO BE ADDRESSED.
-        </h2>
-    </div>
+
 
     <div class="grid grid-cols-1 lg:grid-cols-2">
-        <div class="flex flex-col justify-center bg-[#E85D36] p-10 md:p-16 lg:p-24 text-white">
-            <h3 class="mb-8 font-['Playfair_Display'] text-3xl md:text-4xl">Our Mission</h3>
+        <div class="flex flex-col justify-center bg-[var(--color-primary)] p-10 md:p-16 lg:p-24 text-white">
+            <h3 class="mb-8 font-['Playfair_Display'] text-3xl md:text-4xl">How We Work</h3>
             <div class="space-y-6 opacity-90 font-light text-sm md:text-base leading-relaxed">
-                <p>We aim to give every woman the freedom to dress the way she wants to be addressed. For too long,
-                    custom clothing has been reserved for men. With DALYA you create custom pieces that you'll actually
-                    want to wear, the way YOU WANT TO WEAR THEM.</p>
-                <p>To empower women to live life the way they see fit. We create a space for women who may have felt
-                    forgotten and a place where all women are celebrated.</p>
-                <p>We are here to celebrate women who challenge the status quo. We aren't just a brand - we are a
-                    movement, a family committed to giving women what they want, how they want it.</p>
+                <p><span class="font-bold uppercase">Pick Your Base Style:</span> Start by choosing from our curated collection of signature pieces. Each style is designed to be the perfect foundation for your unique look.</p>
+                <p><span class="font-bold uppercase">Buy As-Is or Customize:</span> Love it as it is? Add to cart and select your size. Want something special? Personalize your piece with custom options to make it truly yours.</p>
+                <p><span class="font-bold uppercase">Order & Make Her Yours:</span> Place your order and let us handle the rest. Your made-for-you creation will be crafted with care and delivered to your door, ready to wear and enjoy.</p>
             </div>
         </div>
         <div class="relative h-[500px] lg:h-auto">
-            <img src="https://images.unsplash.com/photo-1552874869-5c39ec9288dc?q=80&w=1200&auto=format&fit=crop"
+            <img src="{{ asset('media/photo-1620063224601-ead11b9737bf.avif') }}"
                 alt="Woman in suit" class="w-full h-full object-cover">
         </div>
     </div>
@@ -38,7 +29,7 @@
     <div class="bg-[#F6EFE6] px-6 py-24 text-center">
         <h2 class="font-['Playfair_Display'] text-[#2b2b2b] text-2xl md:text-4xl uppercase tracking-wide">
             Dress How You Want To Be Addressed<br>
-            <span class="font-normal italic">In 5 Easy Steps</span>
+            <span class="font-normal italic">In 3 Easy Steps</span>
         </h2>
     </div>
 
@@ -56,7 +47,7 @@
             </p>
         </div>
         <div class="relative order-1 lg:order-2 h-[500px] lg:h-auto">
-            <img src="https://images.unsplash.com/photo-1548624149-f32195f560e2?q=80&w=1200&auto=format&fit=crop"
+            <img src="{{ asset('media/photo-1532453288672-3a27e9be9efd.avif') }}"
                 alt="Woman in orange blazer" class="w-full h-full object-cover object-top">
         </div>
     </div>
@@ -99,7 +90,7 @@
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2">
-        <div class="flex flex-col justify-center order-2 lg:order-1 bg-[#023430] p-10 md:p-16 lg:p-24 text-white">
+        <div class="flex flex-col justify-center order-2 lg:order-1 bg-[var(--color-primary)] p-10 md:p-16 lg:p-24 text-white">
             <span class="opacity-70 mb-4 font-bold text-xs uppercase tracking-[0.2em]">Step Three</span>
             <h3 class="mb-6 font-['Playfair_Display'] text-3xl md:text-4xl">ORDER & MAKE HER YOURS</h3>
             <p class="opacity-90 mb-6 font-light text-sm md:text-base leading-relaxed">
@@ -118,7 +109,29 @@
         </div>
     </div>
 
-    <div class="bg-[#E85D36] px-6 py-20 overflow-hidden">
+
+    <div class="relative flex justify-center items-center w-full h-[300px] md:h-[400px]">
+        <img src="{{ asset('media/photo-1531123897727-8f129e1688ce.avif') }}"
+            alt="Book Consultation" class="w-full h-full object-[center_30%] object-cover">
+
+        <div class="absolute inset-0 bg-[#A05A2C]/40 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-black/20"></div>
+
+        <div class="absolute inset-0 flex justify-center items-center">
+            <div class="flex flex-col items-center bg-white/20 shadow-lg backdrop-blur-md mx-4 px-4 md:px-12 py-8 md:py-12 rounded-xl w-full max-w-2xl text-center">
+                <h2 class="drop-shadow-md mb-6 font-['Inter'] font-bold text-white text-lg md:text-3xl uppercase leading-snug md:leading-tight tracking-wide">
+                    Dress how you
+want to be addressed.
+                </h2>
+                <a href="{{ route('shop') }}" wire:navigate
+                    class="inline-block hover:bg-white shadow-md mt-2 md:mt-4 px-6 md:px-10 py-2 md:py-3 border border-white/80 rounded-full font-semibold text-white/90 hover:text-[#A05A2C] text-xs md:text-sm uppercase tracking-widest transition-all duration-300">
+                    Shop Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-[#023430] px-6 py-20 overflow-hidden">
         <div class="mx-auto max-w-4xl text-center">
 
             <div class="flex md:flex-row flex-col justify-center items-center gap-8 md:gap-4 mb-16">
@@ -155,4 +168,6 @@
             </p>
         </div>
     </div>
+
+    
 </main>

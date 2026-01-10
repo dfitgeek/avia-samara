@@ -8,6 +8,12 @@
     <title>{{ $title ?? 'Avia Samara' }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css
 ">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/x-icon">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -55,6 +61,41 @@
             transition: background-color 0.3s;
             /* Smooth transition */
         }
+
+         .swiper {
+      /* width: 800px; */
+    }
+
+    .swiper-slide {
+      height: 70vh;
+      background: #882525;
+      line-height: 300px;
+      text-align: center;
+    }
+
+    .swiper-slide:nth-child(2) {
+      background: #8acc7d;
+    }
+
+    .swiper-slide:nth-child(3) {
+      background: #b7cc7d;
+    }
+
+    .swiper-slide:nth-child(4) {
+      background: #9eb75c;
+    }
+
+    .swiper-slide:nth-child(5) {
+      background: #7da8cc;
+    }
+
+    .swiper-slide:nth-child(6) {
+      background: #96cc7d;
+    }
+
+    .swiper-slide:nth-child(7) {
+      background: #cc7dae;
+    }
     </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,7 +123,7 @@
         <div class="flex justify-between items-center mx-auto md:px-8 md:py-4 container">
 
             <a href="{{ route('home') }}" wire:navigate class="max-w-[120px] md:max-w-[155px] font-bold">
-                <img src="{{ asset('logo.png') }}" alt="Logo"> 
+                <img src="{{ asset('logo.png') }}" alt="Logo">
             </a>
 
             <nav class="hidden lg:flex items-center space-x-8 font-medium text-sm uppercase tracking-wide">
@@ -128,7 +169,7 @@
 
                                 <div class="group relative cursor-pointer">
                                     <div class="relative bg-gray-200 h-80 overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=800&auto=format&fit=crop"
+                                        <img src="{{ asset('media/DSC08238-y-(4)-Edit.jpg') }}"
                                             alt="Evening Collection"
                                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                                         <div
@@ -136,22 +177,22 @@
                                         </div>
                                         <div class="bottom-6 left-0 absolute w-full text-white text-center">
                                             <p class="mb-1 text-xs uppercase tracking-widest">New</p>
-                                            <h4 class="font-serif text-xl">Evening & Bridal<br>Collection</h4>
+                                            <h4 class="font-serif text-xl">Classic <br> Collection</h4>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="group relative cursor-pointer">
                                     <div class="relative bg-gray-200 h-80 overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop"
+                                        <img src="{{ asset('media/IMG_2193.jpg') }}"
                                             alt="Jewelry Collection"
                                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                                         <div
                                             class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors">
                                         </div>
                                         <div class="bottom-6 left-0 absolute w-full text-white text-center">
-                                            <p class="mb-1 text-xs uppercase tracking-widest">New</p>
-                                            <h4 class="font-serif text-xl">Jewelry<br>Collection</h4>
+                                            <p class="mb-1 text-xs uppercase tracking-widest">Made for you</p>
+                                            <h4 class="font-serif text-xl">Bridal<br>Collection</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -176,10 +217,9 @@
                             <div class="gap-12 grid grid-cols-4">
 
                                 <div>
-                                    <h3 class="mb-6 font-serif text-gray-900 text-lg normal-case">Services</h3>
+                                    <h3 class="mb-6 font-serif text-gray-900 text-lg normal-case">Collection</h3>
                                     <ul class="space-y-3 text-gray-600 normal-case">
-                                        <li><a href="#"
-                                                class="hover:text-[#E85D36] transition-colors">Tailored</a></li>
+
                                         <li><a href="#" class="hover:text-[#E85D36] transition-colors">Custom
                                                 Design</a></li>
                                         <li><a href="{{ route('made-to-measure') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">Made to
@@ -195,30 +235,30 @@
 
                                 <div class="group relative cursor-pointer">
                                     <div class="relative bg-gray-200 h-80 overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=800&auto=format&fit=crop"
+                                        <img src="{{ asset('media/IMG_7518.jpg') }}"
                                             alt="Evening Collection"
                                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                                         <div
                                             class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors">
                                         </div>
                                         <div class="bottom-6 left-0 absolute w-full text-white text-center">
-                                            <p class="mb-1 text-xs uppercase tracking-widest">New</p>
-                                            <h4 class="font-serif text-xl">Evening & Bridal<br>Collection</h4>
+                                            <p class="mb-1 text-xs uppercase tracking-widest">Details</p>
+                                            <h4 class="font-serif text-xl"> Sewn<br>With Craftsmanship</h4>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="group relative cursor-pointer">
                                     <div class="relative bg-gray-200 h-80 overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop"
+                                        <img src="{{ asset('media/IMG_7523.jpg') }}"
                                             alt="Jewelry Collection"
                                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                                         <div
                                             class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors">
                                         </div>
                                         <div class="bottom-6 left-0 absolute w-full text-white text-center">
-                                            <p class="mb-1 text-xs uppercase tracking-widest">New</p>
-                                            <h4 class="font-serif text-xl">Jewelry<br>Collection</h4>
+                                            <p class="mb-1 text-xs uppercase tracking-widest">Elegance</p>
+                                            <h4 class="font-serif text-xl">Heritage<br>Meets Sophistication</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -246,7 +286,7 @@
                                     <h3 class="mb-6 font-serif text-gray-900 text-lg normal-case">About Avia Samara
                                     </h3>
                                     <ul class="space-y-3 text-gray-600 normal-case">
-                                        <li><a href="{{ route('about') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">About</a></li>
+                                        <li><a href="{{ route('about') }}" wire:navigate class="hover:text-[#E85D36] capitalize transition-colors">Who we are</a></li>
                                         <li><a href="{{ route('mission') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">Our
                                                 Mission</a></li>
                                         <li><a href="{{ route('order-process') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">How We
@@ -261,7 +301,7 @@
 
                                 <div class="group relative cursor-pointer">
                                     <div class="relative bg-gray-200 h-80 overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=800&auto=format&fit=crop"
+                                        <img src="{{ asset('media/DSC08238-y-(4)-Edit.jpg') }}"
                                             alt="Evening Collection"
                                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                                         <div
@@ -276,7 +316,7 @@
 
                                 <div class="group relative cursor-pointer">
                                     <div class="relative bg-gray-200 h-80 overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop"
+                                        <img src="{{ asset('media/IMG_2193.jpg') }}"
                                             alt="Jewelry Collection"
                                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                                         <div
@@ -297,12 +337,12 @@
                 <a href="{{ route('contact') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">
                     Contacts
                 </a>
-                
+
                 <div class="static" @mouseenter="activeDropdown = 'cart'" @mouseleave="activeDropdown = null">
 
                     <button
                         class="relative flex items-center gap-2 bg-black hover:bg-[#E85D36] px-5 py-2 text-white transition-colors">
-                        Cart 
+                        Cart
                         <span
                             class="flex justify-center items-center bg-white rounded-full w-4 h-4 font-bold text-[10px] text-black">3</span>
                             <span class="text-white mdi mdi-cart"></span>
@@ -587,13 +627,13 @@
                         About Us <span x-text="open ? '-' : '+'"></span>
                     </button>
                     <div x-cloak x-show="open" class="space-y-3 bg-gray-50 mt-1 py-2 pl-4 text-gray-500 normal-case">
-                        <a href="{{ route('about') }}" wire:navigate class="block hover:text-[#E85D36]">About Us</a>
+                        <a href="{{ route('about') }}" wire:navigate class="block hover:text-[#E85D36] capitalize">Who we are</a>
                         <a href="{{ route('mission') }}" wire:navigate class="block hover:text-[#E85D36]">Our Mission</a>
                         <a href="{{ route('order-process') }}" wire:navigate class="block hover:text-[#E85D36]">How we Work</a>
                     </div>
                 </div>
 
-                <a href="{{ route('contact' )}}" wire:navigate class="py-3 border-gray-100 border-b hover:text-[#E85D36]">Contacts</a>
+                <a href="{{ route('contact')}}" wire:navigate class="py-3 border-gray-100 border-b hover:text-[#E85D36]">Contacts</a>
             </div>
         </div>
     </header>
@@ -602,51 +642,93 @@
         {{ $slot }}
     </main>
 
-    <footer class="bg-[#F9F5F0] pt-20 pb-10 border-gray-200 border-t">
-        <div class="gap-12 grid grid-cols-2 md:grid-cols-4 mx-auto mb-16 px-6 container">
+    <footer class="md:px-8 pt-20 pb-10 border-gray-200 border-t bg-[var(--color-text-white)]">
+        <div class="gap-12 grid grid-cols-2 md:grid-cols-4 mx-auto mb-16 px-6 md: container">
             <div class="col-span-2 md:col-span-1">
-                <h4 class="mb-6 font-['Playfair_Display'] font-bold text-2xl tracking-wide">OMAHB</h4>
+                <a href="{{ route('home') }}" wire:navigate class="mb-6 font-['Playfair_Display'] font-bold tracking-wide">
+                    <img class="max-w-9 md:max-w-36" src="{{ asset('logo-alt.png') }}" alt="">
+                </a>
                 <p class="mb-6 text-gray-500 text-sm leading-relaxed">Luxurious fashion designed for the modern era,
                     crafting stories through fabric since 2014.</p>
-                <div class="flex space-x-4">
-                    <a href="#"
-                        class="flex justify-center items-center bg-white hover:bg-[#E85D36] shadow-sm rounded-full w-8 h-8 text-gray-400 hover:text-white transition-all">IG</a>
-                    <a href="#"
-                        class="flex justify-center items-center bg-white hover:bg-[#E85D36] shadow-sm rounded-full w-8 h-8 text-gray-400 hover:text-white transition-all">FB</a>
-                    <a href="#"
-                        class="flex justify-center items-center bg-white hover:bg-[#E85D36] shadow-sm rounded-full w-8 h-8 text-gray-400 hover:text-white transition-all">TW</a>
-                </div>
+                    <div class="flex items-center gap-4">
+                        <div class="social-button">
+                          <button class="group relative rounded-full w-12 h-12">
+                            <div class="top-0 group-hover:-top-8 left-0 absolute bg-blue-800 group-hover:shadow-2xl rounded-full w-full h-full duration-300 floater"></div>
+                            <div class="z-10 relative flex justify-center items-center border-2 border-blue-800 rounded-full w-full h-full icon">
+                              <i class="fill-[#ecf0f1] group-hover:fill-[#171543] text-[#ecf0f1] hover:text-black duration-300 mdi mdi-facebook"></i>
+                            </div>
+                          </button>
+                        </div>
+
+                        <div class="social-button">
+                          <button class="group relative rounded-full w-12 h-12">
+                            <div class="top-0 group-hover:-top-8 left-0 absolute bg-red-800 group-hover:shadow-2xl rounded-full w-full h-full duration-300 floater"></div>
+                            <div class="z-10 relative flex justify-center items-center border-2 border-red-800 rounded-full w-full h-full icon">
+                              <i class="fill-[#ecf0f1] group-hover:fill-[#171543] text-[#ecf0f1] hover:text-black duration-300 mdi mdi-instagram"></i>
+                            </div>
+                          </button>
+                        </div>
+
+                        <div class="social-button">
+                          <button class="group relative rounded-full w-12 h-12">
+                            <div class="top-0 group-hover:-top-8 left-0 absolute bg-black group-hover:shadow-2xl rounded-full w-full h-full duration-300 floater"></div>
+                            <div class="z-10 relative flex justify-center items-center border-2 border-black rounded-full w-full h-full icon">
+                              <i class="fill-[#ecf0f1] group-hover:fill-[#171543] text-[#ecf0f1] hover:text-black duration-300 mdi mdi-twitter"></i>
+                            </div>
+                          </button>
+                        </div>
+
+                        <div class="social-button">
+                          <button class="group relative rounded-full w-12 h-12">
+                            <div class="top-0 group-hover:-top-8 left-0 absolute bg-green-700 group-hover:shadow-2xl rounded-full w-full h-full duration-300 floater"></div>
+                            <div class="z-10 relative flex justify-center items-center border-2 border-green-700 rounded-full w-full h-full icon">
+                              <i class="fill-[#ecf0f1] group-hover:fill-[#171543] text-[#ecf0f1] hover:text-black duration-300 mdi mdi-whatsapp"></i>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
             </div>
             <div>
-                <h5 class="mb-6 font-bold text-[#1A1A1A] text-xs uppercase tracking-widest">Support</h5>
+                <h5 class="mb-6 font-bold text-[#1A1A1A] text-xs uppercase tracking-widest">Quick Links</h5>
                 <ul class="space-y-3 text-gray-500 text-sm">
-                    <li><a href="#" class="hover:text-[#E85D36] transition-colors">Contact Us</a></li>
-                    <li><a href="#" class="hover:text-[#E85D36] transition-colors">Shipping</a></li>
-                    <li><a href="#" class="hover:text-[#E85D36] transition-colors">Returns & Exchange</a></li>
-                    <li><a href="#" class="hover:text-[#E85D36] transition-colors">Size Guide</a></li>
+                    <li><a href="{{ route('shop') }}"  wire:navigate class="hover:text-[#E85D36] transition-colors">Shop</a></li>
+                    <li><a href="#" class="hover:text-[#E85D36] transition-colors">Accessories</a></li>
+                    <li><a href="{{ route('made-to-measure') }}" class="hover:text-[#E85D36] transition-colors">Made to Measure</a></li>
+                    <li><a href="#" class="hover:text-[#E85D36] transition-colors">Alteration</a></li>
                 </ul>
             </div>
             <div>
                 <h5 class="mb-6 font-bold text-[#1A1A1A] text-xs uppercase tracking-widest">Company</h5>
                 <ul class="space-y-3 text-gray-500 text-sm">
-                    <li><a href="#" class="hover:text-[#E85D36] transition-colors">About Us</a></li>
-                    <li><a href="#" class="hover:text-[#E85D36] transition-colors">Careers</a></li>
-                    <li><a href="#" class="hover:text-[#E85D36] transition-colors">Sustainability</a></li>
-                    <li><a href="#" class="hover:text-[#E85D36] transition-colors">Press</a></li>
+                    <li><a href="{{ route('about') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">About Us</a></li>
+                    <li><a href="{{ route('mission') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">Our Mission</a></li>
+                    <li><a href="{{ 'order-process' }}" wire:navigate class="hover:text-[#E85D36] transition-colors">How We Work</a></li>
+                    <li><a href="{{ 'contact' }}" class="hover:text-[#E85D36] transition-colors">Contact Us</a></li>
                 </ul>
             </div>
             <div>
-                <h5 class="mb-6 font-bold text-[#1A1A1A] text-xs uppercase tracking-widest">Newsletter</h5>
-                <p class="mb-4 text-gray-500 text-xs">Subscribe for latest updates.</p>
-                <div class="flex pb-2 border-gray-300 border-b">
-                    <input type="email" placeholder="Your email"
-                        class="bg-transparent outline-none w-full text-sm placeholder-gray-400">
-                    <button class="font-bold hover:text-[#E85D36] text-xs uppercase">Join</button>
-                </div>
+                <h5 class="mb-6 font-bold text-[#1A1A1A] text-xs uppercase tracking-widest">Contact</h5>
+                <ul class="space-y-3 text-gray-500 text-sm">
+                    <li>
+                        <span class="block text-gray-400 text-xs uppercase">Phone</span>
+                        <a href="tel:+2347035944057" class="text-gray-700 hover:text-[#E85D36] text-sm transition-colors"> +2347035944057
+                        </a>
+                        <a href="tel:+2348034373938" class="block text-gray-700 hover:text-[#E85D36] text-sm transition-colors"> +2348034373938
+                        </a>
+                    </li>
+                    <li>
+                        <span class="block text-gray-400 text-xs uppercase">Email</span>
+                        <a href="mailto:hq@samara.co" class="text-gray-700 hover:text-[#E85D36] text-sm transition-colors">hq@samara.co</a>
+                    </li>
+                    <li>
+                        <span class="block text-gray-400 text-xs uppercase">Address</span>
+                        <span class="text-gray-700 text-sm">23 Giwa Amu Rd, off Airport Road, Oka, Benin City 300102, Edo</span>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="pt-8 border-gray-200 border-t text-gray-400 text-xs text-center">
-            &copy; 2024 OMAHB Fashion. All rights reserved.
+            &copy; {{ date('Y') }} Avia Samara Fashion. All rights reserved.
         </div>
     </footer>
     @livewireScripts()
@@ -660,6 +742,8 @@
             }
         });
     </script>
+
+
 </body>
 
 </html>
