@@ -1,12 +1,12 @@
 <div>
     <div class="relative h-[400px] w-full overflow-hidden md:h-[500px]">
-        <img src="{{ asset('media/photo-1532453288672-3a27e9be9efd.avif') }}" alt="Made to Measure Hero"
+        <img src="{{ asset('media/premium_photo-1670871853613-34b62cc3d551.avif') }}" alt="Made to Measure Hero"
             class="h-full w-full object-cover object-top">
 
         <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/30 px-4 text-center">
             <p class="mb-4 text-xs uppercase tracking-[0.2em] text-white/90 md:text-sm">Avia Samara</p>
             <h1 class="font-['Playfair_Display'] text-4xl font-light text-white md:text-6xl lg:text-7xl">
-                Our Collection
+                Street and Urban Wear
             </h1>
         </div>
     </div>
@@ -17,77 +17,27 @@
         <div class="container mx-auto">
             <div class="mb-10 flex items-end justify-between border-b border-gray-100 pb-4">
                 <div>
-                    <h2 class="font-['Playfair_Display'] text-4xl">Our Collection</h2>
-                    <p class="mt-2 font-['Playfair_Display'] text-sm italic text-gray-500">"All Categories"</p>
+                    <h2 class="font-['Playfair_Display'] text-4xl">Street and Urban Wear</h2>
+                    {{-- <p class="mt-2 font-['Playfair_Display'] text-sm italic text-gray-500">"All Categories"</p> --}}
                 </div>
               
-                <select name="" id="" class="border-b border-black pb-1 text-xs font-bold uppercase transition-colors hover:border-[var(--color-danger)] hover:text-[var(--color-danger)]">
-                    <option value="">All Category</option>
-                    <option value="">Ready to wear</option>
-                    <option value="">Accessories</option>
-                    <option value="">Shoes</option>
-                    <option value="">Street and Urban Wear</option>
-                </select>
+                <p  class="border-b border-black pb-1 text-xs font-bold uppercase transition-colors hover:border-[var(--color-danger)] hover:text-[var(--color-danger)]">
+                    Our Collection
+                </p>
             </div>
 
 
 
 
             <div>
-                {{-- <div class="py-7">
+                <div class="py-7">
                     <p class="text-center capitalize">Unfortunately we don't have items for this category yet :(
                     </p>
-                </div> --}}
+                </div>
 
-               {{--  <div>
-                    <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
-                        <div class="group relative aspect-[3/4] cursor-pointer overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=600"
-                                class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
-                            <div class="absolute bottom-3 left-3 right-3 flex items-end justify-between">
-                                <span
-                                    class="bg-black/60 px-3 py-1 text-[10px] uppercase tracking-wide text-white backdrop-blur-sm">Gown
-                                    01</span>
-                            </div>
-                        </div>
-                        <div class="group relative aspect-[3/4] cursor-pointer overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1512288094938-363287817259?q=80&w=600"
-                                class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
-                            <div
-                                class="absolute bottom-3 left-3 bg-black/60 px-3 py-1 text-[10px] uppercase tracking-wide text-white backdrop-blur-sm">
-                                Phoebe Gown</div>
-                        </div>
-                        <div class="group relative aspect-[3/4] cursor-pointer overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1546193430-c2d207739ed7?q=80&w=600"
-                                class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
-                            <div
-                                class="absolute bottom-3 left-3 bg-black/60 px-3 py-1 text-[10px] uppercase tracking-wide text-white backdrop-blur-sm">
-                                Elizabeth Lace</div>
-                        </div>
-                        <div class="group relative aspect-[3/4] cursor-pointer overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1596451190630-186aff535bf2?q=80&w=600"
-                                class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
-                            <div
-                                class="absolute bottom-3 left-3 bg-black/60 px-3 py-1 text-[10px] uppercase tracking-wide text-white backdrop-blur-sm">
-                                Rebecca White</div>
-                        </div>
-                        <div class="group relative aspect-[3/4] cursor-pointer overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=600"
-                                class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
-                            <div
-                                class="absolute bottom-3 left-3 bg-black/60 px-3 py-1 text-[10px] uppercase tracking-wide text-white backdrop-blur-sm">
-                                Rosette Series</div>
-                        </div>
-                    </div>
-        
-                    <div class="mt-8 flex justify-center">
-                        <button
-                            class="border-b border-gray-300 pb-1 text-xs uppercase tracking-widest transition-colors hover:border-black">See
-                            12 More</button>
-                    </div>
-                </div> --}}
+               
 
-                <div x-data="shopComponent(dbData)" class="mx-auto max-w-7xl">
+               {{--  <div x-data="shopComponent(dbData)" class="mx-auto max-w-7xl">
         
      
 
@@ -199,7 +149,7 @@
                         </div>
                     </div>
             
-                </div>
+                </div> --}}
             </div>
 
             

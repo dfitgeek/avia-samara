@@ -149,15 +149,17 @@
                                 <div>
                                     <h3 class="mb-6 font-serif text-gray-900 text-lg normal-case">Collection</h3>
                                     <ul class="space-y-3 text-gray-600 normal-case">
-                                        <li><a href="#" class="hover:text-[#E85D36] transition-colors">Ready to
+                                        <li><a href="{{ route('shop') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">All Collections</a>
+                                        </li>
+                                        <li><a href="{{ route('ready-to-wear') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">Ready to
                                                 wear</a>
                                         </li>
-                                        <li><a href="#"
+                                        <li><a href="{{ route('accessories') }}" wire:navigate
                                                 class="hover:text-[#E85D36] transition-colors">Accessories</a>
                                         </li>
-                                        <li><a href="#" class="hover:text-[#E85D36] transition-colors">Shoes</a>
+                                        <li><a href="{{ route('shoes') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">Shoes</a>
                                         </li>
-                                        <li><a href="#" class="hover:text-[#E85D36] transition-colors">Streetwear
+                                        <li><a href="{{ route('street-urban') }}" class="hover:text-[#E85D36] transition-colors">Streetwear
                                                 & Urban</a></li>
 
                                     </ul>
@@ -220,11 +222,11 @@
                                     <h3 class="mb-6 font-serif text-gray-900 text-lg normal-case">Collection</h3>
                                     <ul class="space-y-3 text-gray-600 normal-case">
 
-                                        <li><a href="#" class="hover:text-[#E85D36] transition-colors">Custom
+                                        <li><a href="{{ route('custom-design') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">Custom
                                                 Design</a></li>
                                         <li><a href="{{ route('made-to-measure') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">Made to
                                                 Measure</a></li>
-                                        <li><a href="#"
+                                        <li><a href="{{ route('alteration') }}" wire:navigate
                                                 class="hover:text-[#E85D36] transition-colors">Alterations</a></li>
                                     </ul>
                                 </div>
@@ -601,10 +603,11 @@
                     </button>
                     <div x-cloak x-show="open" class="space-y-3 bg-gray-50 mt-1 py-2 pl-4 text-gray-500 normal-case">
                         <p class="pt-2 font-bold text-gray-400 text-xs uppercase">Shop</p>
-                        <a href="#" class="block hover:text-[#E85D36]">Ready to Wear</a>
-                        <a href="#" class="block hover:text-[#E85D36]">Accessories</a>
-                        <a href="#" class="block hover:text-[#E85D36]">Shoes</a>
-                        <a href="#" class="block hover:text-[#E85D36]">Streetwear & Urban</a>
+                        <a href="{{ route('shop') }}" wire:navigate class="block hover:text-[#E85D36]">All Collection</a>
+                        <a href="{{ route('ready-to-wear') }}" wire:navigate class="block hover:text-[#E85D36]">Ready to Wear</a>
+                        <a href="{{ route('accessories') }}" wire:navigate class="block hover:text-[#E85D36]">Accessories</a>
+                        <a href="{{ route('shoes') }}" wire:navigate class="block hover:text-[#E85D36]">Shoes</a>
+                        <a href="{{ route('ready-to-wear') }}" wire:navigate class="block hover:text-[#E85D36]">Streetwear & Urban</a>
 
                     </div>
                 </div>
@@ -615,9 +618,9 @@
                         Tailored <span x-text="open ? '-' : '+'"></span>
                     </button>
                     <div x-cloak x-show="open" class="space-y-3 bg-gray-50 mt-1 py-2 pl-4 text-gray-500 normal-case">
-                        <a href="#" class="block hover:text-[#E85D36]">Custom Design</a>
-                        <a href="{{ route('made-to-measure') }}" class="block hover:text-[#E85D36]">Made to Measure</a>
-                        <a href="#" class="block hover:text-[#E85D36]">Alterations</a>
+                        <a href="{{ route('custom-design') }}" wire:navigate class="block hover:text-[#E85D36]">Custom Design</a>
+                        <a href="{{ route('made-to-measure') }}" wire:navigate class="block hover:text-[#E85D36]">Made to Measure</a>
+                        <a href="{{ route('alteration') }}" wire:navigate class="block hover:text-[#E85D36]">Alterations</a>
                     </div>
                 </div>
 
@@ -722,7 +725,7 @@
                     </li>
                     <li>
                         <span class="block text-gray-400 text-xs uppercase">Address</span>
-                        <span class="text-gray-700 text-sm">23 Giwa Amu Rd, off Airport Road, Oka, Benin City 300102, Edo</span>
+                        <span class="text-gray-700 text-sm">23 Giwa Amu Rd, off Airport Road, Oka, Benin City 300102, Edo State, Nigeria.</span>
                     </li>
                 </ul>
             </div>
@@ -742,6 +745,71 @@
             }
         });
     </script>
+
+<script>
+    const dbData = [
+        {
+            id: 1,
+            name: 'Gown 01',
+            price: '$120.00',
+            images: [
+                'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=600',
+                'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=200',
+                'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=200'
+            ],
+            details: { 
+                material: '100% Silk', 
+                fit: 'Regular Fit', 
+                care: 'Dry Clean Only',
+                description: 'A stunning addition to any wardrobe.'
+            }
+        },
+        {
+            id: 2,
+            name: 'Phoebe Gown',
+            price: '$185.00',
+            images: [
+                'https://images.unsplash.com/photo-1512288094938-363287817259?q=80&w=600',
+                'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?q=80&w=200'
+            ],
+            details: { 
+                material: 'Velvet', 
+                fit: 'Slim Fit', 
+                care: 'Hand Wash Cold',
+                description: 'Perfect for evening galas.'
+            }
+        }
+        // ... Add more items from backend here
+    ];
+</script>
+
+<script>
+    // 1. We now accept 'initialProducts' as an argument
+    function shopComponent(initialProducts) {
+        return {
+            // 2. We assign the passed argument to our local state
+            products: initialProducts,
+            
+            cartCount: 0,
+            modals: {
+                image: { open: false, src: '', caption: '' },
+                info: { open: false, data: null }
+            },
+            
+            openImageModal(product, index) {
+                this.modals.image.src = product.images[index];
+                this.modals.image.caption = `${product.name} - View ${index + 1}`;
+                this.modals.image.open = true;
+            },
+            
+            openInfoModal(product) {
+                this.modals.info.data = product;
+                this.modals.info.open = true;
+            },
+            
+        }
+    }
+</script>
 
 
 </body>
