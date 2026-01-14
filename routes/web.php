@@ -1,18 +1,24 @@
 <?php
 
-use App\Livewire\AboutUs;
-use App\Livewire\Accessories;
-use App\Livewire\Alteration;
-use App\Livewire\ContactUs;
-use App\Livewire\CustomDesign;
+use App\Livewire\AdminRegister;
+use App\Livewire\AvailableProducts;
+use App\Livewire\CreateProduct;
+use App\Livewire\Dashboard;
+use App\Livewire\EditProduct;
 use App\Livewire\Home;
-use App\Livewire\MadeToMeasure;
-use App\Livewire\OurMission;
-use App\Livewire\OrderProcess;
-use App\Livewire\ReadyToWear;
-use App\Livewire\Shoes;
 use App\Livewire\Shop;
+use App\Livewire\Shoes;
+use App\Livewire\AboutUs;
+use App\Livewire\ContactUs;
+use App\Livewire\AdminLogin;
+use App\Livewire\Alteration;
+use App\Livewire\OurMission;
+use App\Livewire\Accessories;
+use App\Livewire\ReadyToWear;
 use App\Livewire\StreetUrban;
+use App\Livewire\CustomDesign;
+use App\Livewire\OrderProcess;
+use App\Livewire\MadeToMeasure;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 
@@ -39,10 +45,25 @@ Route::get('/mission', OurMission::class)->name('mission');
 Route::get('/how-we-work', OrderProcess::class)->name('order-process');
 
 
+// Admin Route Endpoint
+Route::get('/admin/login', AdminLogin::class)->name('admin.login');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin/register', AdminRegister::class)->name('admin.register');
+
+
+Route::middleware('admin')->group(function () {
+    Route::get('/admin/dashboard', Dashboard::class)->name('dashboard');
+
+    Route::get('/admin/products', AvailableProducts::class)->name('admin.products');
+
+    Route::get('/admin/product/{id}/edit', action: EditProduct::class)->name('edit-product');
+
+    Route::get('/admin/product/create', CreateProduct::class)->name('create-product');
+
+    Route::get('/admin/app-configuration', App\Livewire\AppConfiguration::class)->name('app.settings');
+
+    Route::get('/admin/orders', App\Livewire\CustomerOrders::class)->name('admin.orders');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

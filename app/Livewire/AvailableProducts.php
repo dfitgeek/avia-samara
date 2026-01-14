@@ -2,17 +2,34 @@
 
 namespace App\Livewire;
 
-use App\Models\Product;
 use Livewire\Component;
-use Livewire\Attributes\Title;
+use Livewire\Attributes\Layout;
+use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 
-class Shop extends Component
+class AvailableProducts extends Component
 {
-    #[Title('Avia Samara - Our Collection')]
+    #[Layout('components.layouts.admin')]
 
     public $category = 'all';
 
-    // public $products = [];
+    // 1. The Delete Action
+    public function delete($id)
+    {
+        $product = Product::findOrFail($id);
+
+        // Optional: Delete images from storage to save space
+        if (isset($product->metadata['images']) && is_array($product->metadata['images'])) {
+            foreach ($product->metadata['images'] as $img) {
+                Storage::disk('public')->delete($img);
+            }
+        }
+
+        $product->delete();
+
+        session()->flash('message', 'Product deleted successfully.');
+        return redirect()->route('admin.products');
+    }
 
     public function render()
     {
@@ -43,7 +60,7 @@ class Shop extends Component
                 'images' => $images,
                 // 2. Generate the Edit URL here (Replace 'products.edit' with your actual route name)
                 // You likely need to create this route in web.php
-                // 'addtocart' => route('', $product->id),
+                'edit_url' => route('edit-product', $product->id),
                 'details' => [
                     'material' => $product->material ?? 'N/A',
                     'fit' => $product->fit ?? 'N/A',
@@ -53,8 +70,8 @@ class Shop extends Component
             ];
         });
 
-        return view('livewire.shop', [
-            'products' => $products,
+        return view('livewire.available-products', [
+            'products' => $products
         ]);
     }
 }

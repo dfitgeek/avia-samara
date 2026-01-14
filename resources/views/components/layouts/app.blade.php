@@ -119,17 +119,17 @@
 <body class="font-['Lato'] antialiased">
 
 
-    <header class="z-50 fixed backdrop-blur-s w-full text-white" x-data="{ mobileOpen: false, activeDropdown: null }">
-        <div class="flex justify-between items-center mx-auto md:px-8 md:py-4 container">
+    <header class="backdrop-blur-s fixed z-50 w-full text-white" x-data="{ mobileOpen: false, activeDropdown: null }">
+        <div class="container mx-auto flex items-center justify-between md:px-8 md:py-4">
 
-            <a href="{{ route('home') }}" wire:navigate class="max-w-[120px] md:max-w-[155px] font-bold">
+            <a href="{{ route('home') }}" wire:navigate class="max-w-[120px] font-bold md:max-w-[155px]">
                 <img src="{{ asset('logo.png') }}" alt="Logo">
             </a>
 
-            <nav class="hidden lg:flex items-center space-x-8 font-medium text-sm uppercase tracking-wide">
+            <nav class="hidden items-center space-x-8 text-sm font-medium uppercase tracking-wide lg:flex">
 
                 <div class="static" @mouseenter="activeDropdown = 'shop'" @mouseleave="activeDropdown = null">
-                    <button class="py-2 hover:text-[#E85D36] transition-colors"
+                    <button class="py-2 transition-colors hover:text-[#E85D36]"
                         :class="{ 'text-[#E85D36]': activeDropdown === 'shop' }">
                         Our Collection
                     </button>
@@ -141,25 +141,25 @@
                         x-transition:leave="transition ease-in duration-150"
                         x-transition:leave-start="opacity-100 translate-y-0"
                         x-transition:leave-end="opacity-0 translate-y-2"
-                        class="top-full left-0 absolute bg-[#f9f5f0] shadow-lg border-gray-100 border-t w-full">
+                        class="absolute left-0 top-full w-full border-t border-gray-100 bg-[#f9f5f0] shadow-lg">
 
-                        <div class="mx-auto px-12 py-10 container">
-                            <div class="gap-12 grid grid-cols-4">
+                        <div class="container mx-auto px-12 py-10">
+                            <div class="grid grid-cols-4 gap-12">
 
                                 <div>
-                                    <h3 class="mb-6 font-serif text-gray-900 text-lg normal-case">Collection</h3>
-                                    <ul class="space-y-3 text-gray-600 normal-case">
-                                        <li><a href="{{ route('shop') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">All Collections</a>
+                                    <h3 class="mb-6 font-serif text-lg normal-case text-gray-900">Collection</h3>
+                                    <ul class="space-y-3 normal-case text-gray-600">
+                                        <li><a href="{{ route('shop') }}" wire:navigate class="transition-colors hover:text-[#E85D36]">All Collections</a>
                                         </li>
-                                        <li><a href="{{ route('ready-to-wear') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">Ready to
+                                        <li><a href="{{ route('ready-to-wear') }}" wire:navigate class="transition-colors hover:text-[#E85D36]">Ready to
                                                 wear</a>
                                         </li>
                                         <li><a href="{{ route('accessories') }}" wire:navigate
-                                                class="hover:text-[#E85D36] transition-colors">Accessories</a>
+                                                class="transition-colors hover:text-[#E85D36]">Accessories</a>
                                         </li>
-                                        <li><a href="{{ route('shoes') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">Shoes</a>
+                                        <li><a href="{{ route('shoes') }}" wire:navigate class="transition-colors hover:text-[#E85D36]">Shoes</a>
                                         </li>
-                                        <li><a href="{{ route('street-urban') }}" class="hover:text-[#E85D36] transition-colors">Streetwear
+                                        <li><a href="{{ route('street-urban') }}" class="transition-colors hover:text-[#E85D36]">Streetwear
                                                 & Urban</a></li>
 
                                     </ul>
@@ -170,14 +170,14 @@
                                 </div>
 
                                 <div class="group relative cursor-pointer">
-                                    <div class="relative bg-gray-200 h-80 overflow-hidden">
+                                    <div class="relative h-80 overflow-hidden bg-gray-200">
                                         <img src="{{ asset('media/DSC08238-y-(4)-Edit.jpg') }}"
                                             alt="Evening Collection"
-                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
                                         <div
-                                            class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors">
+                                            class="absolute inset-0 bg-black/20 transition-colors group-hover:bg-black/10">
                                         </div>
-                                        <div class="bottom-6 left-0 absolute w-full text-white text-center">
+                                        <div class="absolute bottom-6 left-0 w-full text-center text-white">
                                             <p class="mb-1 text-xs uppercase tracking-widest">New</p>
                                             <h4 class="font-serif text-xl">Classic <br> Collection</h4>
                                         </div>
@@ -185,14 +185,14 @@
                                 </div>
 
                                 <div class="group relative cursor-pointer">
-                                    <div class="relative bg-gray-200 h-80 overflow-hidden">
+                                    <div class="relative h-80 overflow-hidden bg-gray-200">
                                         <img src="{{ asset('media/IMG_2193.jpg') }}"
                                             alt="Jewelry Collection"
-                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
                                         <div
-                                            class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors">
+                                            class="absolute inset-0 bg-black/20 transition-colors group-hover:bg-black/10">
                                         </div>
-                                        <div class="bottom-6 left-0 absolute w-full text-white text-center">
+                                        <div class="absolute bottom-6 left-0 w-full text-center text-white">
                                             <p class="mb-1 text-xs uppercase tracking-widest">Made for you</p>
                                             <h4 class="font-serif text-xl">Bridal<br>Collection</h4>
                                         </div>
@@ -205,7 +205,7 @@
                 </div>
 
                 <div class="static" @mouseenter="activeDropdown = 'tailored'" @mouseleave="activeDropdown = null">
-                    <button class="py-2 hover:text-[#E85D36] transition-colors">Tailored</button>
+                    <button class="py-2 transition-colors hover:text-[#E85D36]">Tailored</button>
                     <div x-cloak x-show="activeDropdown === 'tailored'"
                         x-transition:enter="transition ease-out duration-200"
                         x-transition:enter-start="opacity-0 translate-y-2"
@@ -213,21 +213,21 @@
                         x-transition:leave="transition ease-in duration-150"
                         x-transition:leave-start="opacity-100 translate-y-0"
                         x-transition:leave-end="opacity-0 translate-y-2"
-                        class="top-full left-0 absolute bg-[#f9f5f0] shadow-lg border-gray-100 border-t w-full">
+                        class="absolute left-0 top-full w-full border-t border-gray-100 bg-[#f9f5f0] shadow-lg">
 
-                        <div class="mx-auto px-12 py-10 container">
-                            <div class="gap-12 grid grid-cols-4">
+                        <div class="container mx-auto px-12 py-10">
+                            <div class="grid grid-cols-4 gap-12">
 
                                 <div>
-                                    <h3 class="mb-6 font-serif text-gray-900 text-lg normal-case">Collection</h3>
-                                    <ul class="space-y-3 text-gray-600 normal-case">
+                                    <h3 class="mb-6 font-serif text-lg normal-case text-gray-900">Collection</h3>
+                                    <ul class="space-y-3 normal-case text-gray-600">
 
-                                        <li><a href="{{ route('custom-design') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">Custom
+                                        <li><a href="{{ route('custom-design') }}" wire:navigate class="transition-colors hover:text-[#E85D36]">Custom
                                                 Design</a></li>
-                                        <li><a href="{{ route('made-to-measure') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">Made to
+                                        <li><a href="{{ route('made-to-measure') }}" wire:navigate class="transition-colors hover:text-[#E85D36]">Made to
                                                 Measure</a></li>
                                         <li><a href="{{ route('alteration') }}" wire:navigate
-                                                class="hover:text-[#E85D36] transition-colors">Alterations</a></li>
+                                                class="transition-colors hover:text-[#E85D36]">Alterations</a></li>
                                     </ul>
                                 </div>
 
@@ -236,14 +236,14 @@
                                 </div>
 
                                 <div class="group relative cursor-pointer">
-                                    <div class="relative bg-gray-200 h-80 overflow-hidden">
+                                    <div class="relative h-80 overflow-hidden bg-gray-200">
                                         <img src="{{ asset('media/IMG_7518.jpg') }}"
                                             alt="Evening Collection"
-                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
                                         <div
-                                            class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors">
+                                            class="absolute inset-0 bg-black/20 transition-colors group-hover:bg-black/10">
                                         </div>
-                                        <div class="bottom-6 left-0 absolute w-full text-white text-center">
+                                        <div class="absolute bottom-6 left-0 w-full text-center text-white">
                                             <p class="mb-1 text-xs uppercase tracking-widest">Details</p>
                                             <h4 class="font-serif text-xl"> Sewn<br>With Craftsmanship</h4>
                                         </div>
@@ -251,14 +251,14 @@
                                 </div>
 
                                 <div class="group relative cursor-pointer">
-                                    <div class="relative bg-gray-200 h-80 overflow-hidden">
+                                    <div class="relative h-80 overflow-hidden bg-gray-200">
                                         <img src="{{ asset('media/IMG_7523.jpg') }}"
                                             alt="Jewelry Collection"
-                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
                                         <div
-                                            class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors">
+                                            class="absolute inset-0 bg-black/20 transition-colors group-hover:bg-black/10">
                                         </div>
-                                        <div class="bottom-6 left-0 absolute w-full text-white text-center">
+                                        <div class="absolute bottom-6 left-0 w-full text-center text-white">
                                             <p class="mb-1 text-xs uppercase tracking-widest">Elegance</p>
                                             <h4 class="font-serif text-xl">Heritage<br>Meets Sophistication</h4>
                                         </div>
@@ -271,7 +271,7 @@
                 </div>
 
                 <div class="static" @mouseenter="activeDropdown = 'about'" @mouseleave="activeDropdown = null">
-                    <button class="py-2 hover:text-[#E85D36] transition-colors">About Us</button>
+                    <button class="py-2 transition-colors hover:text-[#E85D36]">About Us</button>
                     <div x-cloak x-show="activeDropdown === 'about'"
                         x-transition:enter="transition ease-out duration-200"
                         x-transition:enter-start="opacity-0 translate-y-2"
@@ -279,19 +279,19 @@
                         x-transition:leave="transition ease-in duration-150"
                         x-transition:leave-start="opacity-100 translate-y-0"
                         x-transition:leave-end="opacity-0 translate-y-2"
-                        class="top-full left-0 absolute bg-[#f9f5f0] shadow-lg border-gray-100 border-t w-full">
+                        class="absolute left-0 top-full w-full border-t border-gray-100 bg-[#f9f5f0] shadow-lg">
 
-                        <div class="mx-auto px-12 py-10 container">
-                            <div class="gap-12 grid grid-cols-4">
+                        <div class="container mx-auto px-12 py-10">
+                            <div class="grid grid-cols-4 gap-12">
 
                                 <div>
-                                    <h3 class="mb-6 font-serif text-gray-900 text-lg normal-case">About Avia Samara
+                                    <h3 class="mb-6 font-serif text-lg normal-case text-gray-900">About Avia Samara
                                     </h3>
-                                    <ul class="space-y-3 text-gray-600 normal-case">
-                                        <li><a href="{{ route('about') }}" wire:navigate class="hover:text-[#E85D36] capitalize transition-colors">Who we are</a></li>
-                                        <li><a href="{{ route('mission') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">Our
+                                    <ul class="space-y-3 normal-case text-gray-600">
+                                        <li><a href="{{ route('about') }}" wire:navigate class="capitalize transition-colors hover:text-[#E85D36]">Who we are</a></li>
+                                        <li><a href="{{ route('mission') }}" wire:navigate class="transition-colors hover:text-[#E85D36]">Our
                                                 Mission</a></li>
-                                        <li><a href="{{ route('order-process') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">How We
+                                        <li><a href="{{ route('order-process') }}" wire:navigate class="transition-colors hover:text-[#E85D36]">How We
                                                 Work</a></li>
 
                                     </ul>
@@ -302,14 +302,14 @@
                                 </div>
 
                                 <div class="group relative cursor-pointer">
-                                    <div class="relative bg-gray-200 h-80 overflow-hidden">
+                                    <div class="relative h-80 overflow-hidden bg-gray-200">
                                         <img src="{{ asset('media/DSC08238-y-(4)-Edit.jpg') }}"
                                             alt="Evening Collection"
-                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
                                         <div
-                                            class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors">
+                                            class="absolute inset-0 bg-black/20 transition-colors group-hover:bg-black/10">
                                         </div>
-                                        <div class="bottom-6 left-0 absolute w-full text-white text-center">
+                                        <div class="absolute bottom-6 left-0 w-full text-center text-white">
                                             <p class="mb-1 text-xs uppercase tracking-widest">New</p>
                                             <h4 class="font-serif text-xl">Evening & Bridal<br>Collection</h4>
                                         </div>
@@ -317,14 +317,14 @@
                                 </div>
 
                                 <div class="group relative cursor-pointer">
-                                    <div class="relative bg-gray-200 h-80 overflow-hidden">
+                                    <div class="relative h-80 overflow-hidden bg-gray-200">
                                         <img src="{{ asset('media/IMG_2193.jpg') }}"
                                             alt="Jewelry Collection"
-                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
                                         <div
-                                            class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors">
+                                            class="absolute inset-0 bg-black/20 transition-colors group-hover:bg-black/10">
                                         </div>
-                                        <div class="bottom-6 left-0 absolute w-full text-white text-center">
+                                        <div class="absolute bottom-6 left-0 w-full text-center text-white">
                                             <p class="mb-1 text-xs uppercase tracking-widest">New</p>
                                             <h4 class="font-serif text-xl">Jewelry<br>Collection</h4>
                                         </div>
@@ -336,140 +336,30 @@
                     </div>
                 </div>
 
-                <a href="{{ route('contact') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">
+                <a href="{{ route('contact') }}" wire:navigate class="transition-colors hover:text-[#E85D36]">
                     Contacts
                 </a>
 
-                <div class="static" @mouseenter="activeDropdown = 'cart'" @mouseleave="activeDropdown = null">
+               {{-- Cart Section  --}}
 
-                    <button
-                        class="relative flex items-center gap-2 bg-black hover:bg-[#E85D36] px-5 py-2 text-white transition-colors">
-                        Cart
-                        <span
-                            class="flex justify-center items-center bg-white rounded-full w-4 h-4 font-bold text-[10px] text-black">3</span>
-                            <span class="text-white mdi mdi-cart"></span>
-                    </button>
+               <livewire:cart />
 
-                    <div x-cloak x-show="activeDropdown === 'cart'"
-                        x-transition:enter="transition ease-out duration-200"
-                        x-transition:enter-start="opacity-0 translate-y-2"
-                        x-transition:enter-end="opacity-100 translate-y-0"
-                        x-transition:leave="transition ease-in duration-150"
-                        x-transition:leave-start="opacity-100 translate-y-0"
-                        x-transition:leave-end="opacity-0 translate-y-2"
-                        class="top-full left-0 absolute bg-[#f9f5f0] shadow-xl border-gray-100 border-t w-full text-left cursor-default">
-
-                        <div class="mx-auto px-12 py-10 container">
-                            <div class="gap-12 grid grid-cols-12">
-
-                                <div class="col-span-8 bg-white shadow-sm p-8 border border-gray-100">
-                                    <h3
-                                        class="mb-6 pb-2 border-gray-100 border-b font-serif text-gray-900 text-xl normal-case">
-                                        Your Selection (3 Items)</h3>
-
-                                    <div class="flex flex-col space-y-6">
-                                        <div class="flex items-center gap-6">
-                                            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=200&auto=format&fit=crop"
-                                                class="border border-gray-100 w-20 h-20 object-cover" alt="Heels">
-                                            <div class="flex-1">
-                                                <h4 class="font-medium text-gray-900 text-lg normal-case">Velvet Heels
-                                                </h4>
-                                                <p class="text-gray-500 text-xs uppercase tracking-wide">Black / Size
-                                                    38
-                                                </p>
-                                            </div>
-                                            <div class="text-right">
-                                                <p class="font-medium text-gray-900 text-lg">$240.00</p>
-                                                <button
-                                                    class="text-gray-400 hover:text-red-500 text-xs underline transition-colors">Remove</button>
-                                            </div>
-                                        </div>
-
-                                        <div class="flex items-center gap-6 pt-6 border-gray-50 border-t">
-                                            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=200&auto=format&fit=crop"
-                                                class="border border-gray-100 w-20 h-20 object-cover" alt="Tote">
-                                            <div class="flex-1">
-                                                <h4 class="font-medium text-gray-900 text-lg normal-case">Leather Tote
-                                                </h4>
-                                                <p class="text-gray-500 text-xs uppercase tracking-wide">Brown / One
-                                                    Size
-                                                </p>
-                                            </div>
-                                            <div class="text-right">
-                                                <p class="font-medium text-gray-900 text-lg">$180.00</p>
-                                                <button
-                                                    class="text-gray-400 hover:text-red-500 text-xs underline transition-colors">Remove</button>
-                                            </div>
-                                        </div>
-
-                                        <div class="flex items-center gap-6 pt-6 border-gray-50 border-t">
-                                            <img src="https://images.unsplash.com/photo-1599643478518-17488fbbcd75?q=80&w=200&auto=format&fit=crop"
-                                                class="border border-gray-100 w-20 h-20 object-cover" alt="Pendant">
-                                            <div class="flex-1">
-                                                <h4 class="font-medium text-gray-900 text-lg normal-case">Gold Pendant
-                                                </h4>
-                                                <p class="text-gray-500 text-xs uppercase tracking-wide">18k Gold</p>
-                                            </div>
-                                            <div class="text-right">
-                                                <p class="font-medium text-gray-900 text-lg">$850.00</p>
-                                                <button
-                                                    class="text-gray-400 hover:text-red-500 text-xs underline transition-colors">Remove</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <div
-                                        class="flex flex-col justify-between bg-gray-900 shadow-md p-8 h-full text-white">
-                                        <div>
-                                            <h3 class="mb-6 font-serif text-xl normal-case">Order Summary</h3>
-                                            <div
-                                                class="flex justify-between items-center mb-4 text-gray-400 text-sm normal-case">
-                                                <span>Subtotal</span>
-                                                <span>$1,270.00</span>
-                                            </div>
-                                            <div
-                                                class="flex justify-between items-center mb-4 text-gray-400 text-sm normal-case">
-                                                <span>Tax (Est.)</span>
-                                                <span>$45.00</span>
-                                            </div>
-                                            <div
-                                                class="flex justify-between items-center text-gray-400 text-sm normal-case">
-                                                <span>Shipping</span>
-                                                <span>Free</span>
-                                            </div>
-                                            <hr class="my-6 border-gray-700">
-                                            <div class="flex justify-between items-center font-serif text-2xl">
-                                                <span>Total</span>
-                                                <span>$1,315.00</span>
-                                            </div>
-                                        </div>
-
-                                        <a href="#"
-                                            class="group block relative bg-[#E85D36] hover:bg-white mt-8 py-4 w-full font-bold text-white hover:text-black text-sm text-center uppercase tracking-widest transition-all">
-                                            Order Now
-                                            <span
-                                                class="mdi-arrow-right ml-2 group-hover:ml-4 transition-all mdi"></span>
-                                        </a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @auth()
+                    <a href="{{ route('dashboard') }}" class="relative flex items-center gap-2 bg-black px-5 py-2 text-white transition-colors hover:bg-[#E85D36]">
+                       Admin Dashboard <i class="mdi mdi-view-dashboard text-white" aria-hidden="true"></i>
+                    </a>
+                @endauth
             </nav>
 
-            <div class="lg:hidden flex space-x-4 mt-1 pr-4">
+            <div class="mt-1 flex space-x-4 pr-4 lg:hidden">
 
                 <div class="static" @mouseenter="activeDropdown = 'cart'" @mouseleave="activeDropdown = null">
 
                     <button
-                        class="relative flex items-center gap-2 bg-black hover:bg-[#E85D36] px-5 py-2 text-white transition-colors">
-                        Cart <span class="text-white mdi mdi-cart"></span>
+                        class="relative flex items-center gap-2 bg-black px-5 py-2 text-white transition-colors hover:bg-[#E85D36]">
+                        Cart <span class="mdi mdi-cart text-white"></span>
                         <span
-                            class="flex justify-center items-center bg-white rounded-full w-4 h-4 font-bold text-[10px] text-black">3</span>
+                            class="flex h-4 w-4 items-center justify-center rounded-full bg-white text-[10px] font-bold text-black">3</span>
                     </button>
 
                     <div x-cloak x-show="activeDropdown === 'cart'"
@@ -479,15 +369,15 @@
                         x-transition:leave="transition ease-in duration-150"
                         x-transition:leave-start="opacity-100 translate-y-0"
                         x-transition:leave-end="opacity-0 translate-y-2"
-                        class="top-full left-0 absolute bg-[#f9f5f0] shadow-xl border-gray-100 border-t w-full text-left cursor-default">
+                        class="absolute left-0 top-full w-full cursor-default border-t border-gray-100 bg-[#f9f5f0] text-left shadow-xl">
 
-                        <div class="mx-auto px-4 sm:px-6 lg:px-12 py-10 container">
-                            <div class="gap-6 md:gap-12 grid grid-cols-1 md:grid-cols-12">
+                        <div class="container mx-auto px-4 py-10 sm:px-6 lg:px-12">
+                            <div class="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-12">
 
                                 <div
-                                    class="col-span-12 md:col-span-8 bg-white shadow-sm p-6 md:p-8 border border-gray-100">
+                                    class="col-span-12 border border-gray-100 bg-white p-6 shadow-sm md:col-span-8 md:p-8">
                                     <h3
-                                        class="mb-6 pb-2 border-gray-100 border-b font-serif text-gray-900 text-xl normal-case">
+                                        class="mb-6 border-b border-gray-100 pb-2 font-serif text-xl normal-case text-gray-900">
                                         Your Selection (3 Items)
                                     </h3>
 
@@ -495,48 +385,48 @@
                                         <!-- Cart Item 1 -->
                                         <div class="flex items-center gap-4">
                                             <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=200&auto=format&fit=crop"
-                                                class="border border-gray-100 w-20 h-20 object-cover" alt="Heels">
+                                                class="h-20 w-20 border border-gray-100 object-cover" alt="Heels">
                                             <div class="flex-1">
-                                                <h4 class="font-medium text-gray-900 text-lg normal-case">Velvet Heels
+                                                <h4 class="text-lg font-medium normal-case text-gray-900">Velvet Heels
                                                 </h4>
-                                                <p class="text-gray-500 text-xs uppercase tracking-wide">Black / Size
+                                                <p class="text-xs uppercase tracking-wide text-gray-500">Black / Size
                                                     38</p>
                                             </div>
                                             <div class="text-right">
-                                                <p class="font-medium text-gray-900 text-lg">$240.00</p>
+                                                <p class="text-lg font-medium text-gray-900">$240.00</p>
                                                 <button
-                                                    class="text-gray-400 hover:text-red-500 text-xs underline transition-colors">Remove</button>
+                                                    class="text-xs text-gray-400 underline transition-colors hover:text-red-500">Remove</button>
                                             </div>
                                         </div>
                                         <!-- Cart Item 2 -->
-                                        <div class="flex items-center gap-4 pt-6 border-gray-50 border-t">
+                                        <div class="flex items-center gap-4 border-t border-gray-50 pt-6">
                                             <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=200&auto=format&fit=crop"
-                                                class="border border-gray-100 w-20 h-20 object-cover" alt="Tote">
+                                                class="h-20 w-20 border border-gray-100 object-cover" alt="Tote">
                                             <div class="flex-1">
-                                                <h4 class="font-medium text-gray-900 text-lg normal-case">Leather Tote
+                                                <h4 class="text-lg font-medium normal-case text-gray-900">Leather Tote
                                                 </h4>
-                                                <p class="text-gray-500 text-xs uppercase tracking-wide">Brown / One
+                                                <p class="text-xs uppercase tracking-wide text-gray-500">Brown / One
                                                     Size</p>
                                             </div>
                                             <div class="text-right">
-                                                <p class="font-medium text-gray-900 text-lg">$180.00</p>
+                                                <p class="text-lg font-medium text-gray-900">$180.00</p>
                                                 <button
-                                                    class="text-gray-400 hover:text-red-500 text-xs underline transition-colors">Remove</button>
+                                                    class="text-xs text-gray-400 underline transition-colors hover:text-red-500">Remove</button>
                                             </div>
                                         </div>
                                         <!-- Cart Item 3 -->
-                                        <div class="flex items-center gap-4 pt-6 border-gray-50 border-t">
+                                        <div class="flex items-center gap-4 border-t border-gray-50 pt-6">
                                             <img src="https://images.unsplash.com/photo-1599643478518-17488fbbcd75?q=80&w=200&auto=format&fit=crop"
-                                                class="border border-gray-100 w-20 h-20 object-cover" alt="Pendant">
+                                                class="h-20 w-20 border border-gray-100 object-cover" alt="Pendant">
                                             <div class="flex-1">
-                                                <h4 class="font-medium text-gray-900 text-lg normal-case">Gold Pendant
+                                                <h4 class="text-lg font-medium normal-case text-gray-900">Gold Pendant
                                                 </h4>
-                                                <p class="text-gray-500 text-xs uppercase tracking-wide">18k Gold</p>
+                                                <p class="text-xs uppercase tracking-wide text-gray-500">18k Gold</p>
                                             </div>
                                             <div class="text-right">
-                                                <p class="font-medium text-gray-900 text-lg">$850.00</p>
+                                                <p class="text-lg font-medium text-gray-900">$850.00</p>
                                                 <button
-                                                    class="text-gray-400 hover:text-red-500 text-xs underline transition-colors">Remove</button>
+                                                    class="text-xs text-gray-400 underline transition-colors hover:text-red-500">Remove</button>
                                             </div>
                                         </div>
                                     </div>
@@ -544,35 +434,35 @@
 
                                 <div class="col-span-12 md:col-span-4">
                                     <div
-                                        class="flex flex-col justify-between bg-gray-900 shadow-md p-6 h-full text-white">
+                                        class="flex h-full flex-col justify-between bg-gray-900 p-6 text-white shadow-md">
                                         <div>
                                             <h3 class="mb-6 font-serif text-xl normal-case">Order Summary</h3>
                                             <div
-                                                class="flex justify-between items-center mb-4 text-gray-400 text-sm normal-case">
+                                                class="mb-4 flex items-center justify-between text-sm normal-case text-gray-400">
                                                 <span>Subtotal</span>
                                                 <span>$1,270.00</span>
                                             </div>
                                             <div
-                                                class="flex justify-between items-center mb-4 text-gray-400 text-sm normal-case">
+                                                class="mb-4 flex items-center justify-between text-sm normal-case text-gray-400">
                                                 <span>Tax (Est.)</span>
                                                 <span>$45.00</span>
                                             </div>
                                             <div
-                                                class="flex justify-between items-center text-gray-400 text-sm normal-case">
+                                                class="flex items-center justify-between text-sm normal-case text-gray-400">
                                                 <span>Shipping</span>
                                                 <span>Free</span>
                                             </div>
                                             <hr class="my-6 border-gray-700">
-                                            <div class="flex justify-between items-center font-serif text-2xl">
+                                            <div class="flex items-center justify-between font-serif text-2xl">
                                                 <span>Total</span>
                                                 <span>$1,315.00</span>
                                             </div>
                                         </div>
                                         <a href="#"
-                                            class="group block relative bg-[#E85D36] hover:bg-white mt-8 py-4 w-full font-bold text-white hover:text-black text-sm text-center uppercase tracking-widest transition-all">
+                                            class="group relative mt-8 block w-full bg-[#E85D36] py-4 text-center text-sm font-bold uppercase tracking-widest text-white transition-all hover:bg-white hover:text-black">
                                             Order Now
                                             <span
-                                                class="mdi-arrow-right ml-2 group-hover:ml-4 transition-all mdi"></span>
+                                                class="mdi-arrow-right mdi ml-2 transition-all group-hover:ml-4"></span>
                                         </a>
                                     </div>
                                 </div>
@@ -582,7 +472,7 @@
                     </div>
                 </div>
 
-                <button @click="mobileOpen = !mobileOpen" class="focus:outline-none text-2xl">
+                <button @click="mobileOpen = !mobileOpen" class="text-2xl focus:outline-none">
                     <span x-cloak x-show="!mobileOpen">&#9776;</span>
                     <span x-cloak x-show="mobileOpen">&times;</span>
                 </button>
@@ -593,16 +483,16 @@
 
         <div x-cloak x-show="mobileOpen" x-transition:enter="transition ease-out duration-200"
             x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
-            class="lg:hidden left-0 absolute bg-white shadow-xl border-gray-200 border-t w-full h-[calc(100vh-80px)] overflow-y-auto text-black">
-            <div class="flex flex-col space-y-4 p-6 font-medium text-sm uppercase">
+            class="absolute left-0 h-[calc(100vh-80px)] w-full overflow-y-auto border-t border-gray-200 bg-white text-black shadow-xl lg:hidden">
+            <div class="flex flex-col space-y-4 p-6 text-sm font-medium uppercase">
 
                 <div x-data="{ open: false }">
                     <button @click="open = !open"
-                        class="flex justify-between py-3 border-gray-100 border-b w-full hover:text-[#E85D36]">
+                        class="flex w-full justify-between border-b border-gray-100 py-3 hover:text-[#E85D36]">
                         Our Collection <span x-text="open ? '-' : '+'"></span>
                     </button>
-                    <div x-cloak x-show="open" class="space-y-3 bg-gray-50 mt-1 py-2 pl-4 text-gray-500 normal-case">
-                        <p class="pt-2 font-bold text-gray-400 text-xs uppercase">Shop</p>
+                    <div x-cloak x-show="open" class="mt-1 space-y-3 bg-gray-50 py-2 pl-4 normal-case text-gray-500">
+                        <p class="pt-2 text-xs font-bold uppercase text-gray-400">Shop</p>
                         <a href="{{ route('shop') }}" wire:navigate class="block hover:text-[#E85D36]">All Collection</a>
                         <a href="{{ route('ready-to-wear') }}" wire:navigate class="block hover:text-[#E85D36]">Ready to Wear</a>
                         <a href="{{ route('accessories') }}" wire:navigate class="block hover:text-[#E85D36]">Accessories</a>
@@ -614,10 +504,10 @@
 
                 <div x-data="{ open: false }">
                     <button @click="open = !open"
-                        class="flex justify-between py-3 border-gray-100 border-b w-full hover:text-[#E85D36]">
+                        class="flex w-full justify-between border-b border-gray-100 py-3 hover:text-[#E85D36]">
                         Tailored <span x-text="open ? '-' : '+'"></span>
                     </button>
-                    <div x-cloak x-show="open" class="space-y-3 bg-gray-50 mt-1 py-2 pl-4 text-gray-500 normal-case">
+                    <div x-cloak x-show="open" class="mt-1 space-y-3 bg-gray-50 py-2 pl-4 normal-case text-gray-500">
                         <a href="{{ route('custom-design') }}" wire:navigate class="block hover:text-[#E85D36]">Custom Design</a>
                         <a href="{{ route('made-to-measure') }}" wire:navigate class="block hover:text-[#E85D36]">Made to Measure</a>
                         <a href="{{ route('alteration') }}" wire:navigate class="block hover:text-[#E85D36]">Alterations</a>
@@ -626,17 +516,17 @@
 
                 <div x-data="{ open: false }">
                     <button @click="open = !open"
-                        class="flex justify-between py-3 border-gray-100 border-b w-full hover:text-[#E85D36]">
+                        class="flex w-full justify-between border-b border-gray-100 py-3 hover:text-[#E85D36]">
                         About Us <span x-text="open ? '-' : '+'"></span>
                     </button>
-                    <div x-cloak x-show="open" class="space-y-3 bg-gray-50 mt-1 py-2 pl-4 text-gray-500 normal-case">
-                        <a href="{{ route('about') }}" wire:navigate class="block hover:text-[#E85D36] capitalize">Who we are</a>
+                    <div x-cloak x-show="open" class="mt-1 space-y-3 bg-gray-50 py-2 pl-4 normal-case text-gray-500">
+                        <a href="{{ route('about') }}" wire:navigate class="block capitalize hover:text-[#E85D36]">Who we are</a>
                         <a href="{{ route('mission') }}" wire:navigate class="block hover:text-[#E85D36]">Our Mission</a>
                         <a href="{{ route('order-process') }}" wire:navigate class="block hover:text-[#E85D36]">How we Work</a>
                     </div>
                 </div>
 
-                <a href="{{ route('contact')}}" wire:navigate class="py-3 border-gray-100 border-b hover:text-[#E85D36]">Contacts</a>
+                <a href="{{ route('contact')}}" wire:navigate class="border-b border-gray-100 py-3 hover:text-[#E85D36]">Contacts</a>
             </div>
         </div>
     </header>
@@ -645,92 +535,92 @@
         {{ $slot }}
     </main>
 
-    <footer class="md:px-8 pt-20 pb-10 border-gray-200 border-t bg-[var(--color-text-white)]">
-        <div class="gap-12 grid grid-cols-2 md:grid-cols-4 mx-auto mb-16 px-6 md: container">
+    <footer class="border-t border-gray-200 bg-[var(--color-text-white)] pb-10 pt-20 md:px-8">
+        <div class="md: container mx-auto mb-16 grid grid-cols-2 gap-12 px-6 md:grid-cols-4">
             <div class="col-span-2 md:col-span-1">
                 <a href="{{ route('home') }}" wire:navigate class="mb-6 font-['Playfair_Display'] font-bold tracking-wide">
                     <img class="max-w-9 md:max-w-36" src="{{ asset('logo-alt.png') }}" alt="">
                 </a>
-                <p class="mb-6 text-gray-500 text-sm leading-relaxed">Luxurious fashion designed for the modern era,
+                <p class="mb-6 text-sm leading-relaxed text-gray-500">Luxurious fashion designed for the modern era,
                     crafting stories through fabric since 2014.</p>
                     <div class="flex items-center gap-4">
                         <div class="social-button">
-                          <button class="group relative rounded-full w-12 h-12">
-                            <div class="top-0 group-hover:-top-8 left-0 absolute bg-blue-800 group-hover:shadow-2xl rounded-full w-full h-full duration-300 floater"></div>
-                            <div class="z-10 relative flex justify-center items-center border-2 border-blue-800 rounded-full w-full h-full icon">
-                              <i class="fill-[#ecf0f1] group-hover:fill-[#171543] text-[#ecf0f1] hover:text-black duration-300 mdi mdi-facebook"></i>
+                          <button class="group relative h-12 w-12 rounded-full">
+                            <div class="floater absolute left-0 top-0 h-full w-full rounded-full bg-blue-800 duration-300 group-hover:-top-8 group-hover:shadow-2xl"></div>
+                            <div class="icon relative z-10 flex h-full w-full items-center justify-center rounded-full border-2 border-blue-800">
+                              <i class="mdi mdi-facebook fill-[#ecf0f1] text-[#ecf0f1] duration-300 hover:text-black group-hover:fill-[#171543]"></i>
                             </div>
                           </button>
                         </div>
 
                         <div class="social-button">
-                          <button class="group relative rounded-full w-12 h-12">
-                            <div class="top-0 group-hover:-top-8 left-0 absolute bg-red-800 group-hover:shadow-2xl rounded-full w-full h-full duration-300 floater"></div>
-                            <div class="z-10 relative flex justify-center items-center border-2 border-red-800 rounded-full w-full h-full icon">
-                              <i class="fill-[#ecf0f1] group-hover:fill-[#171543] text-[#ecf0f1] hover:text-black duration-300 mdi mdi-instagram"></i>
+                          <button class="group relative h-12 w-12 rounded-full">
+                            <div class="floater absolute left-0 top-0 h-full w-full rounded-full bg-red-800 duration-300 group-hover:-top-8 group-hover:shadow-2xl"></div>
+                            <div class="icon relative z-10 flex h-full w-full items-center justify-center rounded-full border-2 border-red-800">
+                              <i class="mdi mdi-instagram fill-[#ecf0f1] text-[#ecf0f1] duration-300 hover:text-black group-hover:fill-[#171543]"></i>
                             </div>
                           </button>
                         </div>
 
                         <div class="social-button">
-                          <button class="group relative rounded-full w-12 h-12">
-                            <div class="top-0 group-hover:-top-8 left-0 absolute bg-black group-hover:shadow-2xl rounded-full w-full h-full duration-300 floater"></div>
-                            <div class="z-10 relative flex justify-center items-center border-2 border-black rounded-full w-full h-full icon">
-                              <i class="fill-[#ecf0f1] group-hover:fill-[#171543] text-[#ecf0f1] hover:text-black duration-300 mdi mdi-twitter"></i>
+                          <button class="group relative h-12 w-12 rounded-full">
+                            <div class="floater absolute left-0 top-0 h-full w-full rounded-full bg-black duration-300 group-hover:-top-8 group-hover:shadow-2xl"></div>
+                            <div class="icon relative z-10 flex h-full w-full items-center justify-center rounded-full border-2 border-black">
+                              <i class="mdi mdi-twitter fill-[#ecf0f1] text-[#ecf0f1] duration-300 hover:text-black group-hover:fill-[#171543]"></i>
                             </div>
                           </button>
                         </div>
 
                         <div class="social-button">
-                          <button class="group relative rounded-full w-12 h-12">
-                            <div class="top-0 group-hover:-top-8 left-0 absolute bg-green-700 group-hover:shadow-2xl rounded-full w-full h-full duration-300 floater"></div>
-                            <div class="z-10 relative flex justify-center items-center border-2 border-green-700 rounded-full w-full h-full icon">
-                              <i class="fill-[#ecf0f1] group-hover:fill-[#171543] text-[#ecf0f1] hover:text-black duration-300 mdi mdi-whatsapp"></i>
+                          <button class="group relative h-12 w-12 rounded-full">
+                            <div class="floater absolute left-0 top-0 h-full w-full rounded-full bg-green-700 duration-300 group-hover:-top-8 group-hover:shadow-2xl"></div>
+                            <div class="icon relative z-10 flex h-full w-full items-center justify-center rounded-full border-2 border-green-700">
+                              <i class="mdi mdi-whatsapp fill-[#ecf0f1] text-[#ecf0f1] duration-300 hover:text-black group-hover:fill-[#171543]"></i>
                             </div>
                           </button>
                         </div>
                       </div>
             </div>
             <div>
-                <h5 class="mb-6 font-bold text-[#1A1A1A] text-xs uppercase tracking-widest">Quick Links</h5>
-                <ul class="space-y-3 text-gray-500 text-sm">
-                    <li><a href="{{ route('shop') }}"  wire:navigate class="hover:text-[#E85D36] transition-colors">Shop</a></li>
-                    <li><a href="#" class="hover:text-[#E85D36] transition-colors">Accessories</a></li>
-                    <li><a href="{{ route('made-to-measure') }}" class="hover:text-[#E85D36] transition-colors">Made to Measure</a></li>
-                    <li><a href="#" class="hover:text-[#E85D36] transition-colors">Alteration</a></li>
+                <h5 class="mb-6 text-xs font-bold uppercase tracking-widest text-[#1A1A1A]">Quick Links</h5>
+                <ul class="space-y-3 text-sm text-gray-500">
+                    <li><a href="{{ route('shop') }}"  wire:navigate class="transition-colors hover:text-[#E85D36]">Shop</a></li>
+                    <li><a href="#" class="transition-colors hover:text-[#E85D36]">Accessories</a></li>
+                    <li><a href="{{ route('made-to-measure') }}" class="transition-colors hover:text-[#E85D36]">Made to Measure</a></li>
+                    <li><a href="#" class="transition-colors hover:text-[#E85D36]">Alteration</a></li>
                 </ul>
             </div>
             <div>
-                <h5 class="mb-6 font-bold text-[#1A1A1A] text-xs uppercase tracking-widest">Company</h5>
-                <ul class="space-y-3 text-gray-500 text-sm">
-                    <li><a href="{{ route('about') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">About Us</a></li>
-                    <li><a href="{{ route('mission') }}" wire:navigate class="hover:text-[#E85D36] transition-colors">Our Mission</a></li>
-                    <li><a href="{{ 'order-process' }}" wire:navigate class="hover:text-[#E85D36] transition-colors">How We Work</a></li>
-                    <li><a href="{{ 'contact' }}" class="hover:text-[#E85D36] transition-colors">Contact Us</a></li>
+                <h5 class="mb-6 text-xs font-bold uppercase tracking-widest text-[#1A1A1A]">Company</h5>
+                <ul class="space-y-3 text-sm text-gray-500">
+                    <li><a href="{{ route('about') }}" wire:navigate class="transition-colors hover:text-[#E85D36]">About Us</a></li>
+                    <li><a href="{{ route('mission') }}" wire:navigate class="transition-colors hover:text-[#E85D36]">Our Mission</a></li>
+                    <li><a href="{{ 'order-process' }}" wire:navigate class="transition-colors hover:text-[#E85D36]">How We Work</a></li>
+                    <li><a href="{{ 'contact' }}" class="transition-colors hover:text-[#E85D36]">Contact Us</a></li>
                 </ul>
             </div>
             <div>
-                <h5 class="mb-6 font-bold text-[#1A1A1A] text-xs uppercase tracking-widest">Contact</h5>
-                <ul class="space-y-3 text-gray-500 text-sm">
+                <h5 class="mb-6 text-xs font-bold uppercase tracking-widest text-[#1A1A1A]">Contact</h5>
+                <ul class="space-y-3 text-sm text-gray-500">
                     <li>
-                        <span class="block text-gray-400 text-xs uppercase">Phone</span>
-                        <a href="tel:+2347035944057" class="text-gray-700 hover:text-[#E85D36] text-sm transition-colors"> +2347035944057
+                        <span class="block text-xs uppercase text-gray-400">Phone</span>
+                        <a href="tel:+2347035944057" class="text-sm text-gray-700 transition-colors hover:text-[#E85D36]"> +2347035944057
                         </a>
-                        <a href="tel:+2348034373938" class="block text-gray-700 hover:text-[#E85D36] text-sm transition-colors"> +2348034373938
+                        <a href="tel:+2348034373938" class="block text-sm text-gray-700 transition-colors hover:text-[#E85D36]"> +2348034373938
                         </a>
                     </li>
                     <li>
-                        <span class="block text-gray-400 text-xs uppercase">Email</span>
-                        <a href="mailto:hq@samara.co" class="text-gray-700 hover:text-[#E85D36] text-sm transition-colors">hq@samara.co</a>
+                        <span class="block text-xs uppercase text-gray-400">Email</span>
+                        <a href="mailto:hq@samara.co" class="text-sm text-gray-700 transition-colors hover:text-[#E85D36]">hq@samara.co</a>
                     </li>
                     <li>
-                        <span class="block text-gray-400 text-xs uppercase">Address</span>
-                        <span class="text-gray-700 text-sm">23 Giwa Amu Rd, off Airport Road, Oka, Benin City 300102, Edo State, Nigeria.</span>
+                        <span class="block text-xs uppercase text-gray-400">Address</span>
+                        <span class="text-sm text-gray-700">23 Giwa Amu Rd, off Airport Road, Oka, Benin City 300102, Edo State, Nigeria.</span>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="pt-8 border-gray-200 border-t text-gray-400 text-xs text-center">
+        <div class="border-t border-gray-200 pt-8 text-center text-xs text-gray-400">
             &copy; {{ date('Y') }} Avia Samara Fashion. All rights reserved.
         </div>
     </footer>
@@ -746,70 +636,70 @@
         });
     </script>
 
-<script>
-    const dbData = [
-        {
-            id: 1,
-            name: 'Gown 01',
-            price: '$120.00',
-            images: [
-                'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=600',
-                'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=200',
-                'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=200'
-            ],
-            details: { 
-                material: '100% Silk', 
-                fit: 'Regular Fit', 
-                care: 'Dry Clean Only',
-                description: 'A stunning addition to any wardrobe.'
+    {{-- <script>
+        const dbData = [
+            {
+                id: 1,
+                name: 'Gown 01',
+                price: '$120.00',
+                images: [
+                    'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=600',
+                    'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=200',
+                    'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=200'
+                ],
+                details: { 
+                    material: '100% Silk', 
+                    fit: 'Regular Fit', 
+                    care: 'Dry Clean Only',
+                    description: 'A stunning addition to any wardrobe.'
+                }
+            },
+            {
+                id: 2,
+                name: 'Phoebe Gown',
+                price: '$185.00',
+                images: [
+                    'https://images.unsplash.com/photo-1512288094938-363287817259?q=80&w=600',
+                    'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?q=80&w=200'
+                ],
+                details: { 
+                    material: 'Velvet', 
+                    fit: 'Slim Fit', 
+                    care: 'Hand Wash Cold',
+                    description: 'Perfect for evening galas.'
+                }
             }
-        },
-        {
-            id: 2,
-            name: 'Phoebe Gown',
-            price: '$185.00',
-            images: [
-                'https://images.unsplash.com/photo-1512288094938-363287817259?q=80&w=600',
-                'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?q=80&w=200'
-            ],
-            details: { 
-                material: 'Velvet', 
-                fit: 'Slim Fit', 
-                care: 'Hand Wash Cold',
-                description: 'Perfect for evening galas.'
-            }
-        }
-        // ... Add more items from backend here
-    ];
-</script>
+            // ... Add more items from backend here
+        ];
+    </script>
 
-<script>
-    // 1. We now accept 'initialProducts' as an argument
-    function shopComponent(initialProducts) {
-        return {
-            // 2. We assign the passed argument to our local state
-            products: initialProducts,
-            
-            cartCount: 0,
-            modals: {
-                image: { open: false, src: '', caption: '' },
-                info: { open: false, data: null }
-            },
-            
-            openImageModal(product, index) {
-                this.modals.image.src = product.images[index];
-                this.modals.image.caption = `${product.name} - View ${index + 1}`;
-                this.modals.image.open = true;
-            },
-            
-            openInfoModal(product) {
-                this.modals.info.data = product;
-                this.modals.info.open = true;
-            },
-            
+    <script>
+        // 1. We now accept 'initialProducts' as an argument
+        function shopComponent(initialProducts) {
+            return {
+                // 2. We assign the passed argument to our local state
+                products: initialProducts,
+                
+                cartCount: 0,
+                modals: {
+                    image: { open: false, src: '', caption: '' },
+                    info: { open: false, data: null }
+                },
+                
+                openImageModal(product, index) {
+                    this.modals.image.src = product.images[index];
+                    this.modals.image.caption = `${product.name} - View ${index + 1}`;
+                    this.modals.image.open = true;
+                },
+                
+                openInfoModal(product) {
+                    this.modals.info.data = product;
+                    this.modals.info.open = true;
+                },
+                
+            }
         }
-    }
-</script>
+    </script> --}}
 
 
 </body>
