@@ -17,20 +17,27 @@ class Shop extends Component
 
     public function mount($category = null)
     {
-        // Only set if passed, otherwise default to 'all'
+        // 1. Initialize Category
         if ($category) {
             $this->category = $category;
+        }
 
-            // If a specific category is requested via the component tag, lock the filter
-            if ($category !== 'all') {
-                $this->locked = true;
-            }
+        // 2. Lock logic: If a specific category is passed (e.g. from a route), lock the dropdown
+        if ($this->category !== 'all') {
+            $this->locked = true;
         }
     }
 
-    public function updatedCategory()
+    // 3. Lifecycle Hook: Runs when 'category' is updated
+    public function updatedCategory($value)
     {
-        // Optional: Reset pagination here if you use WithPagination
+        // Security check: If locked, prevent changing category via DevTools/Network manipulation
+        if ($this->locked) {
+            $this->category = $this->category; // Reset to original
+            return;
+        }
+
+        // If you add Pagination later, you must reset it here:
         // $this->resetPage();
     }
 
@@ -68,7 +75,7 @@ class Shop extends Component
     {
         $query = Product::query();
 
-        // Ensure we filter based on the current state of $this->category
+        // Filter Logic
         if ($this->category !== 'all') {
             $query->where('category', $this->category);
         }
@@ -80,7 +87,8 @@ class Shop extends Component
                     $images[] = asset('storage/' . $img);
                 }
             }
-            if (empty($images)) $images[] = 'https://placehold.co/600x800?text=No+Image';
+            if (empty($images))
+                $images[] = 'https://placehold.co/600x800?text=No+Image';
 
             return [
                 'id' => $product->id,
