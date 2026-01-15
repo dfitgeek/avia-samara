@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\AdminRegister;
+use App\Livewire\AllCategory;
 use App\Livewire\AvailableProducts;
 use App\Livewire\CreateProduct;
 use App\Livewire\Dashboard;
@@ -25,8 +26,10 @@ use App\Http\Controllers\ProfileController;
 Route::get('/', Home::class)->name('home');
 Route::get('/about', AboutUs::class)->name('about');
 Route::get('/made-to-measure', MadeToMeasure::class)->name('made-to-measure');
+
 Route::get('/contact', ContactUs::class)->name('contact');
-Route::get('/shop', Shop::class)->name('shop');
+
+Route::get('/shop', AllCategory::class)->name('shop');
 
 Route::get('/shop/custom-design', CustomDesign::class)->name('custom-design');
 

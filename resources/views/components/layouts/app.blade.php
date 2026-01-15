@@ -117,7 +117,67 @@
 </head>
 
 <body class="font-['Lato'] antialiased">
+    {{-- Place this in your layouts/app.blade.php or admin.blade.php --}}
+<div 
+x-data="{ show: false, message: '' }" 
+x-cloak 
+{{-- LISTENER: When 'notify' happens, show the box and update the text --}}
+@warning.window="
+    show = true; 
+    message = $event.detail; 
+    setTimeout(() => show = false, 3000)
+"
+class="pointer-events-none fixed bottom-5 right-5 z-50"
+>
+<div 
+    x-show="show"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="translate-y-2 opacity-0"
+    x-transition:enter-end="translate-y-0 opacity-100"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="translate-y-0 opacity-100"
+    x-transition:leave-end="translate-y-2 opacity-0"
+    class="flex items-center gap-3 rounded bg-black px-6 py-3 text-white shadow-lg"
+>
+    {{-- Success Icon --}}
+   <h1 class="h-5 w-5 text-red-400">!</h1>
 
+    {{-- Dynamic Message --}}
+    <span x-text="message" class="text-sm font-medium"></span>
+</div>
+</div>
+
+
+<div 
+x-data="{ show: false, message: '' }" 
+x-cloak 
+{{-- LISTENER: When 'notify' happens, show the box and update the text --}}
+@notify.window="
+    show = true; 
+    message = $event.detail; 
+    setTimeout(() => show = false, 3000)
+"
+class="pointer-events-none fixed bottom-5 right-5 z-50"
+>
+<div 
+    x-show="show"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="translate-y-2 opacity-0"
+    x-transition:enter-end="translate-y-0 opacity-100"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="translate-y-0 opacity-100"
+    x-transition:leave-end="translate-y-2 opacity-0"
+    class="flex items-center gap-3 rounded bg-black px-6 py-3 text-white shadow-lg"
+>
+    {{-- Success Icon --}}
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+    </svg>
+
+    {{-- Dynamic Message --}}
+    <span x-text="message" class="text-sm font-medium"></span>
+</div>
+</div>
 
     <header class="backdrop-blur-s fixed z-50 w-full text-white" x-data="{ mobileOpen: false, activeDropdown: null }">
         <div class="container mx-auto flex items-center justify-between md:px-8 md:py-4">
@@ -353,124 +413,7 @@
 
             <div class="mt-1 flex space-x-4 pr-4 lg:hidden">
 
-                <div class="static" @mouseenter="activeDropdown = 'cart'" @mouseleave="activeDropdown = null">
-
-                    <button
-                        class="relative flex items-center gap-2 bg-black px-5 py-2 text-white transition-colors hover:bg-[#E85D36]">
-                        Cart <span class="mdi mdi-cart text-white"></span>
-                        <span
-                            class="flex h-4 w-4 items-center justify-center rounded-full bg-white text-[10px] font-bold text-black">3</span>
-                    </button>
-
-                    <div x-cloak x-show="activeDropdown === 'cart'"
-                        x-transition:enter="transition ease-out duration-200"
-                        x-transition:enter-start="opacity-0 translate-y-2"
-                        x-transition:enter-end="opacity-100 translate-y-0"
-                        x-transition:leave="transition ease-in duration-150"
-                        x-transition:leave-start="opacity-100 translate-y-0"
-                        x-transition:leave-end="opacity-0 translate-y-2"
-                        class="absolute left-0 top-full w-full cursor-default border-t border-gray-100 bg-[#f9f5f0] text-left shadow-xl">
-
-                        <div class="container mx-auto px-4 py-10 sm:px-6 lg:px-12">
-                            <div class="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-12">
-
-                                <div
-                                    class="col-span-12 border border-gray-100 bg-white p-6 shadow-sm md:col-span-8 md:p-8">
-                                    <h3
-                                        class="mb-6 border-b border-gray-100 pb-2 font-serif text-xl normal-case text-gray-900">
-                                        Your Selection (3 Items)
-                                    </h3>
-
-                                    <div class="flex flex-col space-y-6">
-                                        <!-- Cart Item 1 -->
-                                        <div class="flex items-center gap-4">
-                                            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=200&auto=format&fit=crop"
-                                                class="h-20 w-20 border border-gray-100 object-cover" alt="Heels">
-                                            <div class="flex-1">
-                                                <h4 class="text-lg font-medium normal-case text-gray-900">Velvet Heels
-                                                </h4>
-                                                <p class="text-xs uppercase tracking-wide text-gray-500">Black / Size
-                                                    38</p>
-                                            </div>
-                                            <div class="text-right">
-                                                <p class="text-lg font-medium text-gray-900">$240.00</p>
-                                                <button
-                                                    class="text-xs text-gray-400 underline transition-colors hover:text-red-500">Remove</button>
-                                            </div>
-                                        </div>
-                                        <!-- Cart Item 2 -->
-                                        <div class="flex items-center gap-4 border-t border-gray-50 pt-6">
-                                            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=200&auto=format&fit=crop"
-                                                class="h-20 w-20 border border-gray-100 object-cover" alt="Tote">
-                                            <div class="flex-1">
-                                                <h4 class="text-lg font-medium normal-case text-gray-900">Leather Tote
-                                                </h4>
-                                                <p class="text-xs uppercase tracking-wide text-gray-500">Brown / One
-                                                    Size</p>
-                                            </div>
-                                            <div class="text-right">
-                                                <p class="text-lg font-medium text-gray-900">$180.00</p>
-                                                <button
-                                                    class="text-xs text-gray-400 underline transition-colors hover:text-red-500">Remove</button>
-                                            </div>
-                                        </div>
-                                        <!-- Cart Item 3 -->
-                                        <div class="flex items-center gap-4 border-t border-gray-50 pt-6">
-                                            <img src="https://images.unsplash.com/photo-1599643478518-17488fbbcd75?q=80&w=200&auto=format&fit=crop"
-                                                class="h-20 w-20 border border-gray-100 object-cover" alt="Pendant">
-                                            <div class="flex-1">
-                                                <h4 class="text-lg font-medium normal-case text-gray-900">Gold Pendant
-                                                </h4>
-                                                <p class="text-xs uppercase tracking-wide text-gray-500">18k Gold</p>
-                                            </div>
-                                            <div class="text-right">
-                                                <p class="text-lg font-medium text-gray-900">$850.00</p>
-                                                <button
-                                                    class="text-xs text-gray-400 underline transition-colors hover:text-red-500">Remove</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-span-12 md:col-span-4">
-                                    <div
-                                        class="flex h-full flex-col justify-between bg-gray-900 p-6 text-white shadow-md">
-                                        <div>
-                                            <h3 class="mb-6 font-serif text-xl normal-case">Order Summary</h3>
-                                            <div
-                                                class="mb-4 flex items-center justify-between text-sm normal-case text-gray-400">
-                                                <span>Subtotal</span>
-                                                <span>$1,270.00</span>
-                                            </div>
-                                            <div
-                                                class="mb-4 flex items-center justify-between text-sm normal-case text-gray-400">
-                                                <span>Tax (Est.)</span>
-                                                <span>$45.00</span>
-                                            </div>
-                                            <div
-                                                class="flex items-center justify-between text-sm normal-case text-gray-400">
-                                                <span>Shipping</span>
-                                                <span>Free</span>
-                                            </div>
-                                            <hr class="my-6 border-gray-700">
-                                            <div class="flex items-center justify-between font-serif text-2xl">
-                                                <span>Total</span>
-                                                <span>$1,315.00</span>
-                                            </div>
-                                        </div>
-                                        <a href="#"
-                                            class="group relative mt-8 block w-full bg-[#E85D36] py-4 text-center text-sm font-bold uppercase tracking-widest text-white transition-all hover:bg-white hover:text-black">
-                                            Order Now
-                                            <span
-                                                class="mdi-arrow-right mdi ml-2 transition-all group-hover:ml-4"></span>
-                                        </a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <livewire:cart /> 
 
                 <button @click="mobileOpen = !mobileOpen" class="text-2xl focus:outline-none">
                     <span x-cloak x-show="!mobileOpen">&#9776;</span>
